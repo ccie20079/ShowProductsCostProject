@@ -1,0 +1,2447 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tools</name>
+    </assembly>
+    <members>
+        <member name="T:Tools.ApplicationVersion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ApplicationVersion.getVersion(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="productName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.AppManagement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.AppManagement.add(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="hwndOfApp"></param>
+        </member>
+        <member name="M:Tools.AppManagement.closeAllExcel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tools.CapitalDigitalToArabicNumerals">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.CapitalDigitalToArabicNumerals.changeToArabicNumerals(System.String@)">
+            <summary>
+            只支持一到十五。
+            </summary>
+            <param name="CapitalDigital"></param>
+        </member>
+        <member name="M:Tools.CapitalDigitalToArabicNumerals.replaceByArabicNumerals(System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="T:Tools.ChangeFileNameForUpload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ChangeFileNameForUpload.getFileNameForUpload(System.String,System.String)">
+            <summary>
+            上传excel文件时，追加一个随即字符串。
+            </summary>
+            <param name="excelFileName"></param>
+            <param name="randomStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.ChangeFileNameForUpload.getFileNameFromUploadString(System.String)">
+            <summary>
+            upload xxx.xls randomStr
+            </summary>
+            <param name="uploadStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.CheckPattern">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.CheckPattern.CheckNumber(System.String)">
+            <summary>
+            检查是否为数字。
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.checkExcelCellIndicate(System.String)">
+            <summary>
+            检查是否为Excel单元格的标示符。
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.checkColumnIndicate(System.String)">
+            <summary>
+            检查是否为Excel的列标识
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.checkDateStr(System.String,System.DateTime@)">
+            <summary>
+            
+            </summary>
+            <param name="dateStr"></param>
+            <param name="dateValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.isTimeStr(System.String)">
+            <summary>
+            判断是否为时间字符串。
+            </summary>
+            <param name="timeStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.CheckFloat(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.RecordLog(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:Tools.CheckPattern.getSubStr(System.String,System.Int32,System.Int32)">
+            <summary>
+            /输入序列号，获取其中的一部分
+            </summary>
+            <param name="SN"></param>
+            <param name="startIndex"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.checkStr(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str1"></param>
+            <param name="str2"></param>
+            <param name="resultStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.isARXls(System.String)">
+            <summary>
+            用于检查考勤记录表中A1单元格的命名规则。
+            </summary>
+            <param name="checkContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.checkFileNameOfYieldsReport(System.String)">
+            <summary>
+            检查计件文档命名是否 依据模式.
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.ifOtherDept(System.String)">
+            <summary>
+            检查是否匹配部门 一组***
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckPattern.ifOtherDeptByDigit(System.String)">
+            <summary>
+            检查是否匹配部门 一组***
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.CheckString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.CheckString.CheckStringChinese(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckString.CheckARName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckString.checkYear(System.String)">
+            <summary>
+            检查字符串是否符合"yyyy-MM-dd"日期格式
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckString.checkMonth(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckString.checkDay(System.String)">
+            <summary>
+            检查天。
+            </summary>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckString.checkIfContainsTheOtherDeptInName(System.String)">
+            <summary>
+            [\u4e00-\u9fa5]
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CloneObject.Clone(System.Object)">
+            <summary>
+            克隆一个对象
+            </summary>
+            <param name="sampleObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.DownloadTheLatestApp">
+            <summary>
+            此类用于下载最新的版本，和初始化连接字符串。
+            </summary>
+        </member>
+        <member name="F:Tools.DownloadTheLatestApp.flag_open_mesSqlConn">
+            <summary>
+            判断是否可以连接上Mes库
+            </summary>
+        </member>
+        <member name="M:Tools.DownloadTheLatestApp.downloadTheLatestVersionAndInitConnStr">
+            <summary>
+            下载最新版,初始化连接字符串.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.CheckAppVerionByFTP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.CheckAppVerionByFTP.checkAppVersionAndOutReleaseVersion(System.String,System.String@)">
+            <summary>
+            检查软件版本,输出最新版本!
+            </summary>
+            <param name="ftp_IPADDR"></param>
+            <param name="releaseVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.CheckVersionOfAppByShare">
+            <summary>
+            检查软件版本
+            </summary>
+        </member>
+        <member name="M:Tools.CheckVersionOfAppByShare.ifExistsBatFileOfConnShare">
+            <summary>
+            检查是否存在连接共享的bat文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckVersionOfAppByShare.checkSoftVersion(System.String,System.String)">
+            <summary>
+            检查程序版本号。
+            </summary>
+            <param name="softwareName"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CheckVersionOfAppByShare.ifExistsTheDirOfSoftware(System.String)">
+            <summary>
+            检查软件目录是否存在
+            </summary>
+            <param name="appName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.ClientSocket">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.ClientSocket.TheclientSocket">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ClientSocket.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ClientSocket.Connect(System.Net.IPAddress,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ip"></param>
+            <param name="port"></param>
+        </member>
+        <member name="M:Tools.ClientSocket.Send(System.String)">
+            <summary>
+            发送数据.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Tools.ClientSocket.ReceiveData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tools.ClipboardHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ClipboardHelper.GetMetaImageFromClipboard(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.ConnectByPing">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ConnectByPing.pingTheAddress(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ipAddr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.ConsoleHelper">
+            <summary>
+            控制台帮助类
+            </summary>
+        </member>
+        <member name="M:Tools.ConsoleHelper.FindWindow(System.String,System.String)">
+            <summary>
+            获取窗口句柄
+            </summary>
+            <param name="lpClassName"></param>
+            <param name="lpWindowName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.ConsoleHelper.ShowWindow(System.IntPtr,System.UInt32)">
+            <summary>
+            设置窗体的显示与隐藏
+            </summary>
+            <param name="hWnd"></param>
+            <param name="nCmdShow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.ConsoleHelper.hideConsole(System.String)">
+            <summary>
+            隐藏控制台
+            </summary>
+            <param name="ConsoleTitle">控制台标题(可为空,为空则取默认值)</param>
+        </member>
+        <member name="M:Tools.ConsoleHelper.showConsole(System.String)">
+            <summary>
+            显示控制台
+            </summary>
+            <param name="ConsoleTitle">控制台标题(可为空,为空则去默认值)</param>
+        </member>
+        <member name="T:Tools.DateTimeHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.DateTimeHelper.getDateStr(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dtStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.FileListStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tools.FtpClient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FtpClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            创建FTP工具
+            <para>
+            默认不使用SSL,使用二进制传输方式,使用被动模式FTP有两种使用模式：主动和被动。
+            主动模式要求客户端和服务器端同时打开并且监听一个端口以建立连接。
+            在这种情况下，客户端由于安装了防火墙会产生一些问题。
+            所以，创立了被动模式。
+            被动模式只要求服务器端产生一个监听相应端口的进程，这样就可以绕过客户端安装了防火墙的问题。
+            </para>
+            </summary>
+            <param name="host">主机名称</param>
+            <param name="userId">用户名</param>
+            <param name="password">密码</param>
+        </member>
+        <member name="M:Tools.FtpClient.#ctor(System.String,System.String,System.String,System.Int32,System.Net.IWebProxy,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            创建FTP工具
+            </summary>
+            <param name="host">主机名称</param>
+            <param name="userId">用户名</param>
+            <param name="password">密码</param>
+            <param name="port">端口</param>
+            <param name="enableSsl">允许Ssl</param>
+            <param name="proxy">代理</param>
+            <param name="useBinary">允许二进制</param>
+            <param name="usePassive">允许被动模式</param>
+        </member>
+        <member name="P:Tools.FtpClient.Host">
+            <summary>
+            主机
+            </summary>
+        </member>
+        <member name="P:Tools.FtpClient.UserId">
+            <summary>
+            登录用户名
+            </summary>
+        </member>
+        <member name="P:Tools.FtpClient.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Tools.FtpClient.Proxy">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="P:Tools.FtpClient.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:Tools.FtpClient.EnableSsl">
+            <summary>
+            EnableSsl 
+            </summary>
+        </member>
+        <member name="P:Tools.FtpClient.UsePassive">
+            <summary>
+            被动模式
+            </summary>
+        </member>
+        <member name="P:Tools.FtpClient.UseBinary">
+            <summary>
+            二进制方式
+            </summary>
+        </member>
+        <member name="M:Tools.FtpClient.getUrl">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Tools.FtpClient.RemotePath">
+            <summary>
+            远端路径
+            <para>
+                返回FTP服务器上的当前路径(可以是 / 或 /a/../ 的形式)
+            </para>
+            </summary>
+        </member>
+        <member name="M:Tools.FtpClient.CreateRequest(System.String,System.String)">
+            <summary>
+            创建一个FTP请求
+            </summary>
+            <param name="url">请求地址</param>
+            <param name="method">请求方法</param>
+            <returns>FTP请求</returns>
+        </member>
+        <member name="M:Tools.FtpClient.Upload(System.IO.FileInfo,System.String)">
+            <summary>
+            把文件上传到FTP服务器的RemotePath下
+            </summary>
+            <param name="localFile">本地文件信息</param>
+            <param name="remoteFileName">要保存到FTP文件服务器上的文件名称包含扩展名</param>
+        </member>
+        <member name="M:Tools.FtpClient.Download(System.String,System.String)">
+            <summary>
+            从当前目录下下载文件
+            <para>
+            如果本地文件存在,则从本地文件结束的位置开始下载.
+            </para>
+            </summary>
+            <param name="serverName">服务器上的文件名称</param>
+            <param name="localName">本地文件名称</param>
+            <returns>返回一个值,指示是否下载成功</returns>
+        </member>
+        <member name="M:Tools.FtpClient.Rename(System.String,System.String)">
+            <summary>
+            文件更名
+            </summary>
+            <param name="oldFileName">原文件名</param>
+            <param name="newFileName">新文件名</param>
+            <returns>返回一个值,指示更名是否成功</returns>
+        </member>
+        <member name="M:Tools.FtpClient.GetFileList">
+            <summary>
+            获取当前目录下文件列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FtpClient.GetFileDetails">
+            <summary>
+            获取详细列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FtpClient.DeleteFile(System.String)">
+            <summary>
+            删除FTP服务器上的文件
+            </summary>
+            <param name="fileName">文件名称</param>
+            <returns>返回一个值,指示是否删除成功</returns>
+        </member>
+        <member name="M:Tools.FtpClient.MakeDirectory(System.String)">
+            <summary>
+            在当前目录下创建文件夹
+            </summary>
+            <param name="dirName">文件夹名称</param>
+            <returns>返回一个值,指示是否创建成功</returns>
+        </member>
+        <member name="M:Tools.FtpClient.DeleteDirectory(System.String)">
+            <summary>
+            删除文件夹
+            </summary>
+            <param name="dirName">文件夹名称</param>
+            <returns>返回一个值,指示是否删除成功</returns>
+        </member>
+        <member name="M:Tools.FtpClient.GetFileSize(System.String)">
+            <summary>
+            获取文件大小
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FtpClient.Append(System.IO.FileInfo,System.String)">
+            <summary>
+            给FTP服务器上的文件追加内容
+            </summary>
+            <param name="localFile">本地文件</param>
+            <param name="remoteFileName">FTP服务器上的文件</param>
+            <returns>返回一个值,指示是否追加成功</returns>
+        </member>
+        <member name="M:Tools.FtpClient.Append(System.IO.Stream,System.String)">
+            <summary>
+            给FTP服务器上的文件追加内容
+            </summary>
+            <param name="stream">数据流(可通过设置偏移来实现从特定位置开始上传)</param>
+            <param name="remoteFileName">FTP服务器上的文件</param>
+            <returns>返回一个值,指示是否追加成功</returns>
+        </member>
+        <member name="P:Tools.FtpClient.CurrentDirectory">
+            <summary>
+            获取FTP服务器上的当前路径
+            </summary>
+        </member>
+        <member name="M:Tools.FtpClient.CheckFileExist(System.String)">
+            <summary>
+            检查文件是否存在
+            </summary>
+            <param name="fileName">要检查的文件名</param>
+            <returns>返回一个值,指示要检查的文件是否存在</returns>
+        </member>
+        <member name="M:Tools.FtpClient.GetFtpFileList(System.String,System.String)">
+            <summary>
+            读取文件目录下所有的文件名称，包括文件夹名称
+            </summary>
+            <param name="ftpAdd">传过来的文件夹路径</param>
+            <returns>返回的文件或文件夹名称</returns>
+        </member>
+        <member name="M:Tools.FtpClient.CheckDirectoryExist(System.String,System.String)">
+            <summary>
+            判断ftp服务器上该目录是否存在
+            </summary>
+            <param name="ftpPath">FTP路径目录</param>
+            <param name="dirName">目录上的文件夹名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.FTPDownloadWithProgressBar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FTPDownloadWithProgressBar.DownloadFile(System.String,System.String,System.Windows.Forms.ProgressBar,System.Windows.Forms.Label)">
+            <summary>        
+            c#,.net 下载文件        
+            </summary>        
+            <param name="URL">下载文件地址</param>       
+            
+            <param name="Filename">下载后的存放地址</param>        
+            <param name="Prog">用于显示的进度条</param>        
+            
+        </member>
+        <member name="T:Tools.SetTheValueOfTheDatabaseConnStr">
+            <summary>
+            为oracle,SqlServer 数据库的连接字符串赋值
+            </summary>
+        </member>
+        <member name="M:Tools.SetTheValueOfTheDatabaseConnStr.setTheValueOfTheConnStr">
+            <summary>
+             OracleDaoHelper,SqlDaoHelper 数据库的连接字符串赋值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.JN_Helper">
+            <summary>
+            用户处理工号中带 "_"的情形。
+            </summary>
+        </member>
+        <member name="M:Tools.JN_Helper.getJN(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.NetworkHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.NetworkHelper.GetLocalIP">
+            <summary>
+            得到本机IP
+            </summary>
+        </member>
+        <member name="M:Tools.NetworkHelper.GetGateway">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.NetworkHelper.IsRightIP(System.String)">
+            <summary>
+            判断是否为正确的IP地址
+            </summary>
+            <param name="strIPadd">需要判断的字符串</param>
+            <returns>true = 是 false = 否</returns>
+        </member>
+        <member name="M:Tools.NetworkHelper.IsPingIP(System.String)">
+            <summary>
+            尝试Ping指定IP是否能够Ping通
+            </summary>
+            <param name="strIP">指定IP</param>
+            <returns>true 是 false 否</returns>
+        </member>
+        <member name="T:Tools.ProgressInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.ProgressInfo.Update_time">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ProgressInfo.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="products_name"></param>
+        </member>
+        <member name="M:Tools.ProgressInfo.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ProgressInfo.getProgressInfo(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="applicationName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.RealTime_Message">
+            <summary>
+            实时信息类
+            </summary>
+        </member>
+        <member name="P:Tools.RealTime_Message.Msg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.RealTime_Message.Flag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.RealTime_Message.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.RealTime_Message.ifExists">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.RealTime_Message.add">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.RealTime_Message.update">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.RealTime_Message.getRealTimeMessage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.RegistryHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.RegistryHelper.add_To_Boot_Options(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="appName"></param>
+            <param name="appPath"></param>
+        </member>
+        <member name="T:Tools.Report_Dealwith_Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.Report_Dealwith_Status.ifExists">
+            <summary>
+            判断某文件中的索引为:  sheet_Index，名称为:  sheet_Name 的表格是否存在记录。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.Report_Dealwith_Status.add">
+            <summary>
+            新增 记录
+            </summary>
+        </member>
+        <member name="M:Tools.Report_Dealwith_Status.update">
+            <summary>
+            report_file_path, 
+            </summary>
+        </member>
+        <member name="M:Tools.Report_Dealwith_Status.del">
+            <summary>
+            删除掉此报表的处理记录。
+            </summary>
+        </member>
+        <member name="M:Tools.Report_Dealwith_Status.delStatusByFileName(System.String)">
+            <summary>
+            删除 Report_Dealwith_status,通过FileName删除.
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Tools.Report_Dealwith_Status.getDTOfTheReport">
+            <summary>
+            获取此报表下的所有DataTable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.Report_Dealwith_Status.getAllReportDealWithStatusTheDay">
+            <summary>
+            获取当天的所有处理结果.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.FINISH_MESSAGE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.FINISH_MESSAGE.Prompt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.ifExists">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.add">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.update">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.getLastestMsgByHandlerName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="nameOfTheHandler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.getLastestMsg">
+            <summary>
+            获取最新的一条信息。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.getMsgByNameOfTheHandlerAndRandomStr(System.String,System.String)">
+            <summary>
+            依据PN 和　randomStr 获取　Message
+            </summary>
+            <param name="pN"></param>
+            <param name="randomStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FINISH_MESSAGE.clear(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="nameOfTheHandler"></param>
+        </member>
+        <member name="T:Tools.MultiThread">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MultiThread.dowork(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="lpWindowName"></param>
+        </member>
+        <member name="T:Tools.MyTcpClient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.MyTcpClient.GetResultStr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.MyTcpClient.GetSuccessStr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MyTcpClient.getTcpClient(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="server"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTcpClient.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MyTcpClient.sendMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mess"></param>
+        </member>
+        <member name="M:Tools.MyTcpClient.ReceiveData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MyTcpClient.Connect(System.String,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="server"></param>
+            <param name="port"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:Tools.MyTCPListener">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.MyTCPListener.Server">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.MyTCPListener.Stream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MyTCPListener.#ctor(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MyTCPListener.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MyTCPListener.getTcpListener(System.String,System.Int32)">
+            <summary>
+            获取Listener
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTCPListener.start">
+            <summary>
+            开启服务.
+            </summary>
+        </member>
+        <member name="T:Tools.ProcessBarInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.ProcessBarInfo.PromptStr">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ProcessBarInfo.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ProcessBarInfo.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            构造方法。
+            </summary>
+            <param name="_promptStr"></param>
+            <param name="_currentValue"></param>
+            <param name="_totalValue"></param>
+        </member>
+        <member name="M:Tools.ProcessBarInfo.getProcessBarInfo(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mess"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.ProcessBarInfo.toString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.MySendKeys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MySendKeys.sendAltAndTab">
+            <summary>
+            发送Alt+Tab
+            </summary>
+        </member>
+        <member name="M:Tools.MySendKeys.sendEnter">
+            <summary>
+            发送回车。
+            </summary>
+        </member>
+        <member name="T:Tools.SearchWindow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.SearchWindow.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.SearchWindow.closeWindow(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="lpClassName"></param>
+            <param name="lpWindowName"></param>
+        </member>
+        <member name="M:Tools.SearchWindow.closeWindowByWindowName(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="lpClassName"></param>
+            <param name="lpWindowName"></param>
+        </member>
+        <member name="T:Tools.ShadeConsole">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ShadeConsole.shade">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Tools.SocketMess">
+            <summary>
+            回传给客户端的消息。
+            </summary>
+        </member>
+        <member name="M:Tools.SocketMess.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="_mess"></param>
+            <param name="_currentValue"></param>
+            <param name="_totalValue"></param>
+        </member>
+        <member name="M:Tools.SocketMess.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.SocketMess.Mess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.SocketMess.getSocketMessWithFailFlag(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mess"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SocketMess.getSocketMessWithSuccessFlag(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mess"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SocketMess.toString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SocketMess.ifFailMess">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SocketMess.ifSuccess">
+            <summary>
+            
+            </summary>
+            <param name="strResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SocketMess.ifSuccess(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mess"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SocketMess.ifFailMess(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.Socket_Mess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.Socket_Mess.Process_Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.Socket_Mess.Result">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.Socket_Mess.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.Socket_Mess.Current_value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.Socket_Mess.Total_value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.Socket_Mess.Flag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.Socket_Mess.Task_status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.Socket_Mess.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="_process_Name"></param>
+        </member>
+        <member name="M:Tools.Socket_Mess.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.Socket_Mess.getCurrentStatus">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.Socket_Mess.ifExistsTheProcess">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.Socket_Mess.addTheSocketMess">
+            <summary>
+            新增时是否为processing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.Socket_Mess.updateTheSocketMess">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.Socket_Mess.writeTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.Socket_Mess.writeProgress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.Socket_Mess.writeResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.Socket_Mess.closeTheSocketMess">
+            <summary>
+            使Socket_Mess的  task_status 为 finished.
+            </summary>
+        </member>
+        <member name="T:Tools.SqlDaoHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tools.SqlDaoHelper.conn_str">
+            定义连接字符串
+        </member>
+        <member name="M:Tools.SqlDaoHelper.#ctor">
+            <summary>
+            补充无参构造器
+            </summary>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            目的初始化  连接 SqlServer 的字符串
+            </summary>
+            <param name="dbName"></param>
+            <param name="ipAddress"></param>
+            <param name="user_ID"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.getDTBySql(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.executeSQL(System.String)">
+            <summary>
+            执行某个SQL语句。
+            </summary>
+            <param name="sqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.getDR(System.String,System.Data.SqlClient.SqlConnection@)">
+            <summary>
+            
+            </summary>
+            <param name="sqlStr"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.executeSQLThrowExceptioin(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            
+            </summary>
+            <param name="sqlStr"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.executeSQLBySpecificConn(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+            执行某个SQL语句,在指定的连接下，并将异常上抛，用于处理事务中的异常。
+            </summary>
+            <param name="sqlStr"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.noLogging(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:Tools.SqlDaoHelper.logging(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:Tools.String_Byte_Helper.ByteToString(System.Byte[])">
+            <summary>
+            将byte数组转为string类型
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.String_Byte_Helper.StringToByte(System.String)">
+            <summary>
+            将string转为byte数组
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.FolderNameEditor">
+            <summary>
+            FolderBrowser 的设计器基类
+            </summary>
+        </member>
+        <member name="T:Tools.TheFolderBrowserDialog">
+            <summary>
+            Vista 样式的选择文件对话框的基类
+            </summary>
+        </member>
+        <member name="M:Tools.TheFolderBrowserDialog.#ctor">
+            <summary>
+            初始化 FolderBrowser 的新实例
+            </summary>
+        </member>
+        <member name="P:Tools.TheFolderBrowserDialog.DirectoryPath">
+            <summary>
+            获取在 FolderBrowser 中选择的文件夹路径
+            </summary>
+        </member>
+        <member name="M:Tools.TheFolderBrowserDialog.ShowDialog(System.Windows.Forms.IWin32Window)">
+            <summary>
+            向用户显示 FolderBrowser 的对话框
+            </summary>
+            <param name="owner">任何实现 System.Windows.Forms.IWin32Window（表示将拥有模式对话框的顶级窗口）的对象。</param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.CmdHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.CmdHelper.GetWindowThreadProcessId(System.IntPtr,System.Int32@)">
+            <summary>
+            
+            </summary>
+            <param name="hwnd"></param>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CmdHelper.FindWindow(System.String,System.String)">
+            <summary>
+            获取窗体的句柄函数
+            </summary>
+            <param name="lpClassName">窗口类名</param>
+            <param name="lpWindowName">窗口标题名</param>
+            <returns>返回句柄</returns>
+        </member>
+        <member name="F:Tools.CmdHelper.proc">
+            <summary>
+            Cmd 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:Tools.CmdHelper.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:Tools.CmdHelper.RunCmd(System.String)">
+            <summary>
+            执行CMD语句
+            </summary>
+            <param name="cmd">要执行的CMD命令</param>
+        </member>
+        <member name="M:Tools.CmdHelper.runCmd(System.String)">
+            <summary>
+            执行CMD语句
+            </summary>
+            <param name="cmd">要执行的CMD命令</param>
+        </member>
+        <member name="M:Tools.CmdHelper.OpenMsWord(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:Tools.CmdHelper.LaunchBatOrExe(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="batName"></param>
+            <param name="args">向启动的EXE，传递参数，多个参数用空格隔开。</param>
+        </member>
+        <member name="M:Tools.CmdHelper.copyFileToDestDir(System.String,System.String)">
+            <summary>
+            复制目标文件到  目的目录下。
+            </summary>
+            <param name="srcFilePath"></param>
+            <param name="destDir"></param>
+        </member>
+        <member name="M:Tools.CmdHelper.copyFileToDestDirWithNewFileName(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="srcFilePath"></param>
+            <param name="destDir"></param>
+            <param name="destFileName"></param>
+        </member>
+        <member name="M:Tools.CmdHelper.RunProgram(System.String,System.String)">
+            <summary>
+            打开软件并执行命令
+            </summary>
+            <param name="programName">软件路径加名称（.exe文件）</param>
+            <param name="cmd">要执行的命令</param>
+        </member>
+        <member name="M:Tools.CmdHelper.RunProgram(System.String)">
+            <summary>
+            打开软件
+            </summary>
+            <param name="programName">软件路径加名称（.exe文件）</param>
+        </member>
+        <member name="M:Tools.CmdHelper.killProcessByHwnd(System.Int32)">
+            <summary>
+            按照句柄进行删除。
+            </summary>
+        </member>
+        <member name="M:Tools.CmdHelper.killProcessByIntPtr(System.IntPtr)">
+            <summary>
+            按照句柄进行删除。
+            </summary>
+        </member>
+        <member name="M:Tools.CmdHelper.killProcessByHwndQueue(System.Collections.Generic.Queue{System.Int32})">
+            <summary>
+            按照句柄进行删除。
+            </summary>
+        </member>
+        <member name="M:Tools.CmdHelper.killProcessByCapation(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="capations"></param>
+        </member>
+        <member name="M:Tools.CmdHelper.killProcessWithOtherThread(System.String)">
+            <summary>
+            开启一个单独的线程来,结束弹出的界面.
+            </summary>
+            <param name="capationStr"></param>
+        </member>
+        <member name="M:Tools.CmdHelper.killTaskByImageName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="imagename"></param>
+        </member>
+        <member name="M:Tools.CmdHelper.ifExistsExcelOpened">
+            <summary>
+            依据名称查询是否存在Excel进程。
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Tools.CmdHelper.ifExistsTheProcessByName(System.String)" -->
+        <member name="M:Tools.CmdHelper.ifExistsTheProcessOfSpecificPath(System.String)">
+            <summary>
+            依据名称查询是否存在某某路径的进程.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CmdHelper.ifExistsTheProcessByName_2ndMethod(System.String)">
+            <summary>
+            依据名称查询是否存在某进程。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.CmdHelper.killTheProcessByName(System.String)">
+            <summary>
+            依据进程名,杀死某进程。
+            </summary>
+            <param name="processName"></param>
+        </member>
+        <member name="T:Tools.FTPHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.FTPHelper.FtpServerIP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.FTPHelper.FtpUserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.FTPHelper.FtpPassword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.FTPHelper.FtpURI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FTPHelper.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ftpServerIP"></param>
+            <param name="ftpRemotePath"></param>
+            <param name="ftpUserID"></param>
+            <param name="ftpPassword"></param>
+        </member>
+        <member name="M:Tools.FTPHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FTPHelper.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FTPHelper.UpLoadFile(System.String,System.String)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="localFile">要上传到FTP服务器的本地文件</param>
+            <param name="ftpURI">ftp://</param>
+        </member>
+        <member name="M:Tools.FTPHelper.UploadDirectory(System.String,System.String,System.String)">
+            <summary>
+            上传整个目录
+            </summary>
+            <param name="localDir">要上传的目录的上一级目录</param>
+            <param name="ftpPath">FTP路径</param>
+            <param name="dirName">要上传的目录名</param>
+            <param name="ftpUser">FTP用户名（匿名为空）</param>
+            <param name="_ftpPassword">FTP登录密码（匿名为空）</param>
+        </member>
+        <member name="M:Tools.FTPHelper.CheckDirectoryExist(System.String,System.String)">
+            <summary>
+            判断ftp服务器上该目录是否存在
+            </summary>
+            <param name="ftpPath">FTP路径目录</param>
+            <param name="dirName">目录上的文件夹名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FTPHelper.RemoveDir(System.String,System.String)">
+            <summary>
+            删除目录。
+            </summary>
+            <param name="ftpPath"></param>
+            <param name="dirName"></param>
+        </member>
+        <member name="M:Tools.FTPHelper.MakeDir(System.String,System.String)">
+            <summary>
+            创建文件夹  
+            </summary>  
+            <param name="ftpPath">FTP路径</param>  
+            <param name="dirName">创建文件夹名称</param>  
+        </member>
+        <member name="M:Tools.FTPHelper.GetDirDetails(System.String)">
+            <summary>
+            获取目录下的详细信息
+            </summary>
+            <param name="localDir">本机目录</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FTPHelper.Delete(System.String)">
+            <summary>  
+            删除文件  
+            </summary>  
+        </member>
+        <member name="M:Tools.FTPHelper.GetAllList(System.String)">
+            <summary>  
+            获取FTP文件列表(包括文件夹)
+            </summary>   
+        </member>
+        <member name="M:Tools.FTPHelper.GetAllList(System.String,System.String)">
+            <summary>  
+            获取FTP文件列表(包括文件夹)
+            </summary>   
+        </member>
+        <member name="M:Tools.FTPHelper.delAllFile(System.String)">
+            <summary>
+            删除所有文件。
+            </summary>
+        </member>
+        <member name="T:Tools.NetHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.NetHelper.getIPAddr">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.NetHelper.GetMacsByNetworkInterface">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.OracleConnHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.OracleConnHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.OracleConnHelper.getConn">
+            <summary>
+            获取已经打开的连接对象。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleConnHelper.getTheConn">
+            <summary>
+            获取一个单独的连接对象。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleConnHelper.closeConn">
+            <summary>
+            关闭连接对象。
+            </summary>
+        </member>
+        <member name="M:Tools.OracleConnHelper.closeConn(Oracle.DataAccess.Client.OracleConnection)">
+            <summary>
+            关闭指定的链接对象
+            </summary>
+            <param name="conn"></param>
+        </member>
+        <member name="T:Tools.ConnHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ConnHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ConnHelper.getConn">
+            <summary>
+            获取已经打开的连接对象。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.ConnHelper.closeConn">
+            <summary>
+            关闭连接对象。
+            </summary>
+        </member>
+        <member name="M:Tools.ConnHelper.closeConn(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            关闭指定的链接对象
+            </summary>
+            <param name="conn"></param>
+        </member>
+        <member name="T:Tools.ConvertHelper`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Tools.ConvertHelper`1.ConvertToList(System.Data.DataTable)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.ConvertHelper`1.ConvertToObj(System.Data.DataTable)">
+            <summary>
+            
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.DGVHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.DGVHelper.AutoSizeForDGV(System.Windows.Forms.DataGridView)">
+            <summary>
+            
+            </summary>
+            <param name="dgv"></param>
+        </member>
+        <member name="M:Tools.DGVHelper.myDgv_RowPostPaint_Event(System.Object,System.Windows.Forms.DataGridViewRowPostPaintEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Tools.DGVHelper.AutoSizeColumn(System.Windows.Forms.DataGridView)">
+            <summary>
+            使DataGridView的列自适应宽度
+            </summary>
+            <param name="dgViewFiles"></param>
+        </member>
+        <member name="M:Tools.DGVHelper.unFreezeTheFirstTwoColumns(System.Windows.Forms.DataGridView)">
+            <summary>
+            解冻DataGridView
+            </summary>
+            <param name="dgViewFiles"></param>
+        </member>
+        <member name="M:Tools.DGVHelper.SelectAllRows(System.Windows.Forms.DataGridView,System.String)">
+            <summary>
+            选择所有行
+            </summary>
+        </member>
+        <member name="T:Tools.DirectoryHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.DirectoryHelper.createDirecotry(System.String)">
+            <summary>
+            创建目录
+            </summary>
+        </member>
+        <member name="M:Tools.DirectoryHelper.createFile(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Tools.DirectoryHelper.deleteAllTheFileOfThePath(System.String)">
+            <summary>
+            删除某个目录下的所有文件.
+            </summary>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getDirOfFile(System.String)">
+            <summary>
+            返回某文件全路径的目录部门。
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getFileName(System.String)">
+            <summary>
+            返回文件名,包含后缀。
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getFileNameWithoutSuffix(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getFilePathWithoutSuffix(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getXlsFileName(System.String)">
+            <summary>
+            获取指定目录下的excel文件。
+            </summary>
+            <param name="dir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getXlsFileUnderThePrescribedDir(System.String)">
+            <summary>
+            获取指定目录下的excel文件。
+            </summary>
+            <param name="dir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getDesktopDir">
+            <summary>
+            获取系统桌面目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DirectoryHelper.getParentDir">
+            <summary>
+            获取某个路径的父目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.DT_To_List.TableToList``1(System.Data.DataTable,System.Boolean)">
+            <summary>
+            DataTable转化为List集合
+            </summary>
+            <typeparam name="T">实体对象</typeparam>
+            <param name="dt">dataTable表</param>
+            <param name="isStoreDB">是否存入数据库datetime字段,date字段没事，取出不用判断</param>
+            <returns>返回list集合</returns>
+        </member>
+        <member name="M:Tools.FileNameDialog.getSelectedFilePath(System.String,System.String)">
+            <summary>
+            获选择的文件路径
+            filter格式 Execl files (*.xls)|*.xls
+            </summary>
+            <param name="title"></param>
+            <param name="Filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FileNameDialog.getSelectedFilePathWithDefaultDir(System.String,System.String,System.String)">
+            <summary>
+            选择文件时，打开一个默认的目录。
+            </summary>
+            <param name="title"></param>
+            <param name="Filter"></param>
+            <param name="defaultDir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FileNameDialog.getSelectedPathWithDefaultDir(System.String,System.String,System.String)">
+            <summary>
+            选择文件时，打开一个默认的目录。
+            </summary>
+            <param name="title"></param>
+            <param name="Filter"></param>
+            <param name="defaultDir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FileNameDialog.getSaveFileName(System.String,System.String)">
+            <summary>
+            获取保存路径
+            Filter格式: Execl files (*.xls)|*.xls
+            </summary>
+            <param name="title"></param>
+            <param name="Filter"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Tools.FileNameDialog.getSaveFileNameWithDefaultDir(System.String,System.String,System.String,System.String)" -->
+        <member name="T:Tools.MSG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tools.MSG._complete_flag">
+            <summary>
+            用于标识 程序是否完成.
+            </summary>
+        </member>
+        <member name="M:Tools.MSG.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MSG.#ctor(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+            <param name="flag"></param>
+        </member>
+        <member name="P:Tools.MSG.Msg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tools.MSG.Flag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.MySqlConnHelper.getConn">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MySqlConnHelper.closeConn">
+            <summary>
+            关闭连接对象。
+            </summary>
+        </member>
+        <member name="M:Tools.MySqlConnHelper.closeConn(MySql.Data.MySqlClient.MySqlConnection)">
+            <summary>
+            
+            </summary>
+            <param name="conn"></param>
+        </member>
+        <member name="T:Tools.NumberCheck">
+            <summary>
+            检查是否为数字。
+            </summary>
+        </member>
+        <member name="M:Tools.NumberCheck.isNum(System.String)">
+            <summary>
+            判斷是否為為數字形式。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.OracleDaoHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tools.OracleDaoHelper.conn_str">
+            定义连接字符串
+        </member>
+        <member name="M:Tools.OracleDaoHelper.#ctor">
+            <summary>
+            补充无参构造器
+            </summary>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ipAddress"></param>
+            <param name="service_name"></param>
+            <param name="user_ID"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.getDTBySql(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.executeSQL(System.String)">
+            <summary>
+            执行某个SQL语句。
+            </summary>
+            <param name="sqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.getDR(System.String,Oracle.DataAccess.Client.OracleConnection@)">
+            <summary>
+            执行某个SQL语句。
+            </summary>
+            <param name="sqlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.executeSQLThrowExceptioin(System.String,Oracle.DataAccess.Client.OracleConnection)">
+            <summary>
+            
+            </summary>
+            <param name="sqlStr"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.executeSQLBySpecificConn(System.String,Oracle.DataAccess.Client.OracleConnection)">
+            <summary>
+            执行某个SQL语句,在指定的连接下，并将异常上抛，用于处理事务中的异常。
+            </summary>
+            <param name="sqlStr"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.noLogging(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:Tools.OracleDaoHelper.logging(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <member name="T:Tools.OracleHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.OracleHelper.getBaseDao">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            SQL语句执行方法。
+            </summary>
+            <param name="strSQL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleHelper.ExecuteNonQuery(System.String,Oracle.DataAccess.Client.OracleParameter[])">
+            <summary>
+            存储过程执行方法,传入参数集合。
+            </summary>
+            <param name="procName"></param>
+            <param name="cmdParms"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleHelper.ExecuteSPWithSpecificConn(System.String,Oracle.DataAccess.Client.OracleParameter[],Oracle.DataAccess.Client.OracleConnection)">
+            <summary>
+            本方法将利用事务解决.
+            </summary>
+            <param name="procName"></param>
+            <param name="cmdParms"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleHelper.CreateCommand(Oracle.DataAccess.Client.OracleCommand,Oracle.DataAccess.Client.OracleConnection,Oracle.DataAccess.Client.OracleTransaction,System.String,Oracle.DataAccess.Client.OracleParameter[])">
+            <summary>
+            带事务处理的command
+            </summary>
+            <param name="cmd"></param>
+            <param name="con"></param>
+            <param name="trans"></param>
+            <param name="procName"></param>
+            <param name="cmdParms"></param>
+        </member>
+        <member name="M:Tools.OracleHelper.getDT(System.String,Oracle.DataAccess.Client.OracleParameter[])">
+            <summary>
+            
+            </summary>
+            <param name="procName"></param>
+            <param name="cmdParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.OracleHelper.getDTBySepecificConn(System.String,Oracle.DataAccess.Client.OracleParameter[],Oracle.DataAccess.Client.OracleConnection)">
+            <summary>
+            从指定的连接获取DataTable
+            </summary>
+            <param name="procName"></param>
+            <param name="cmdParams"></param>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.FileHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.FileHelper.readLastLine(System.String)">
+            <summary>
+            讀取文本中最后一行記錄
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FileHelper.readFile(System.String)">
+            <summary>
+            讀取文本内容，拼接，直至最后一行記錄
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FileHelper.readLastLineWithRowNumAndShare(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FileHelper.writeLineAppendWithShare(System.String,System.String)">
+            <summary>
+            寫數據到某個文件中。
+            </summary>
+            <param name="filePath"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.FileHelper.writeLine(System.String,System.String)">
+            <summary>
+            寫文件到指定目錄
+            </summary>
+            <param name="filePath"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.RandomStr">
+            <summary>
+            生成随即字符串。
+            </summary>
+        </member>
+        <member name="M:Tools.RandomStr.GetRandomString(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            生成随机字符串 
+            </summary>
+            <param name="length">目标字符串的长度</param>
+            <param name="useNum">是否包含数字，1=包含，默认为包含</param>
+            <param name="useLow">是否包含小写字母，1=包含，默认为包含</param>
+            <param name="useUpp">是否包含大写字母，1=包含，默认为包含</param>
+            <param name="useSpe">是否包含特殊字符，1=包含，默认为不包含</param>
+            <param name="custom">要包含的自定义字符，直接输入要包含的字符列表</param>
+            <returns>指定长度的随机字符串</returns>
+        </member>
+        <member name="M:Tools.RandomStr.getTimeStamp">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.RecordLog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.RecordLog.WriteLogInDirectory(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="logDir"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.RecordLog.writeLogInDir(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="logDir"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.ReleaseComObject">
+            <summary>
+            释放资源类。
+            </summary>
+        </member>
+        <member name="M:Tools.ReleaseComObject.ReleaseComObj(System.Collections.Generic.List{System.Object})">
+            <summary>
+            逐个释放资源。
+            </summary>
+            <param name="objList"></param>
+        </member>
+        <member name="M:Tools.SendMouseEvent.Send(Tools.SendMouseEvent.MouseEventFlag,System.Int32,System.Int32,System.UInt32)">
+            <summary>
+            Send mouse event 
+            </summary>
+            <param name="mouseEventFlag">motion and click options</param>
+            <param name="dx">horizontal position or change,value 0~65535</param>
+            <param name="dy">vertical position or change,value 0~65535</param>
+            <param name="dwData">wheel movement</param>
+        </member>
+        <member name="T:Tools.ShowResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.ShowResult.show(System.Windows.Forms.Label,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="lbl"></param>
+            <param name="mesStr"></param>
+            <param name="flag"></param>
+        </member>
+        <member name="M:Tools.ShowResult.prompt(System.Windows.Forms.Label,System.String,System.Boolean)">
+            <summary>
+            提醒用户！
+            </summary>
+            <param name="lbl"></param>
+            <param name="mesStr"></param>
+            <param name="flag"></param>
+        </member>
+        <member name="M:Tools.ShowResult.showByTimer(System.Windows.Forms.Label,System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="lbl"></param>
+            <param name="mesStr"></param>
+            <param name="flag"></param>
+        </member>
+        <member name="M:Tools.ShowResult.#ctor(System.Windows.Forms.Label,System.Windows.Forms.Timer)">
+            <summary>
+            
+            </summary>
+            <param name="lblResult"></param>
+            <param name="timer"></param>
+        </member>
+        <member name="M:Tools.ShowResult.showResult(System.String,System.Boolean)">
+            <summary>
+            显示结果
+            </summary>
+        </member>
+        <member name="M:Tools.SingleListHelper`1.upElement(`0)">
+            <summary>
+            将某个元素上移
+            </summary>
+            <param name="index">元素索引</param>
+        </member>
+        <member name="M:Tools.SingleListHelper`1.downElement(`0)">
+            <summary>
+            向下移动某个元素
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:Tools.StringHelper">
+            <summary>
+            获取条件
+            </summary>
+        </member>
+        <member name="M:Tools.StringHelper.getConditionStr(System.Collections.Queue)">
+            <summary>
+            获取条件 SQL 语句中的条件.
+            </summary>
+            <param name="queue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.StringHelper.getSpecificChar(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str">待检查的字符串</param>
+            <param name="searchStr">指定的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.StringHelper.getDate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="dateStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.TheFTPHelper">
+            <summary>  
+            ftp文件上传、下载操作类  
+            </summary>  
+        </member>
+        <member name="F:Tools.TheFTPHelper.ftpUser">
+            <summary>  
+            ftp用户名，匿名为“”  
+            </summary>  
+        </member>
+        <member name="F:Tools.TheFTPHelper.ftpPassWord">
+            <summary>  
+            ftp用户密码，匿名为“”  
+            </summary>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.#ctor(System.String,System.String,System.String)">
+             <summary>  
+            通过用户名，密码连接到FTP服务器  
+             </summary>  
+             <param name="ftpUser">ftp用户名，匿名为“”</param>  
+             <param name="ftpPassWord">ftp登陆密码，匿名为“”</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.getFtpHost">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.TheFTPHelper.#ctor">
+            <summary>  
+            匿名访问  
+            </summary>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.ifExistsTheFileOrDir(System.String,System.String)">
+            <summary>
+            判断ftp服务器上该目录是否存在
+            </summary>
+            <param name="ftpPath">FTP路径目录</param>
+            <param name="dirName">目录上的文件夹名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.TheFTPHelper.UpLoadFile(System.String,System.String)">
+            <summary>  
+            上传文件到Ftp服务器  
+            </summary>  
+            <param name="uri">把上传的文件保存为ftp服务器文件的uri,如"ftp://192.168.1.104/capture-212.avi"</param>  
+            <param name="upLoadFile">要上传的本地的文件路径，如D:\capture-2.avi</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.DownLoadFile(System.String,System.String)">
+            <summary>  
+            从ftp下载文件到本地服务器  
+            </summary>  
+            <param name="downloadUrl">要下载的ftp文件路径，如ftp://192.168.1.104/capture-2.avi</param>  
+            <param name="saveFileUrl">本地保存文件的路径，如(@"d:\capture-22.avi"</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.BreakPointDownLoadFile(System.String,System.String)">
+            <summary>  
+            从FTP下载文件到本地服务器,支持断点下载  
+            </summary>  
+            <param name="ftpUri">ftp文件路径，如"ftp://localhost/test.txt"</param>  
+            <param name="saveFile">保存文件的路径，如C:\\test.txt</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.ListFilesAndDirectories(System.String)">
+            <summary>  
+            列出FTP服务器上面当前路径下的所有目录和文件 
+            </summary>  
+            <param name="ftpUri">FTP目录</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.ListFiles(System.String)">
+            <summary>  
+            列出FTP目录下的所有文件  
+            </summary>  
+            <param name="ftpUri">FTP目录</param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.ListDirectories(System.String)">
+            <summary>  
+            列出FTP目录下的所有目录  
+            </summary>  
+            <param name="ftpUri">FRTP目录</param>  
+            <returns>目录列表</returns>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.GetList(System.String)">
+            <summary>  
+            获得文件和目录列表  
+            </summary>  
+            <param name="datastring">FTP返回的列表字符信息</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.ParseFileStructFromUnixStyleRecord(System.String)">
+            <summary>  
+            从Unix格式中返回文件信息  
+            </summary>  
+            <param name="Record">文件信息</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.ParseFileStructFromWindowsStyleRecord(System.String)">
+            <summary>  
+            从Windows格式中返回文件信息  
+            </summary>  
+            <param name="Record">文件信息</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper._cutSubstringFromStringWithTrim(System.String@,System.Char,System.Int32)">
+            <summary>  
+            按照一定的规则进行字符串截取  
+            </summary>  
+            <param name="s">截取的字符串</param>  
+            <param name="c">查找的字符</param>  
+            <param name="startIndex">查找的位置</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.GuessFileListStyle(System.String[])">
+            <summary>  
+            判断文件列表的方式Window方式还是Unix方式  
+            </summary>  
+            <param name="recordList">文件信息列表</param>  
+        </member>
+        <member name="M:Tools.TheFTPHelper.DownFtpDir(System.String,System.String)">
+            <summary>
+            遍历FTP的下载目录，
+            从FTP下载整个文件夹    
+            </summary>    
+            <param name="ftpDir">FTP文件夹路径</param>    
+            <param name="saveDir">保存的本地文件夹路径</param>    
+        </member>
+        <member name="M:Tools.TheFTPHelper.DownloadFtpDirWithProgressBar(System.String,System.String,System.Windows.Forms.Label,System.Windows.Forms.ProgressBar)">
+            <summary>
+            
+            </summary>
+            <param name="ftpDir"></param>
+            <param name="saveDir"></param>
+            <param name="lbl"></param>
+            <param name="pb"></param>      
+        </member>
+        <member name="M:Tools.TheFTPHelper.DownloadFtpDirWithBackgroudWorker(System.String,System.String,System.ComponentModel.BackgroundWorker)">
+            <summary>
+            
+            </summary>
+            <param name="ftpDir"></param>
+            <param name="saveDir"></param>
+            <param name="bgWorker"></param>
+        </member>
+        <member name="M:Tools.TheFTPHelper.getFileCountsInFtpDir(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ftpDir"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.TimeHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Tools.TimeHelper.ifMorning(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="timeStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.TimeHelper.getYearAndMonthStr(System.Int32)">
+            <summary>
+            返回报表的年份与月份,如2018-07
+            </summary>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.TimeHelper.getCurrentTimeStr">
+            <summary>
+            获取当前时间字符串 190402142431
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.WindowsHandler.FindWindow(System.String,System.String)">
+            <summary>
+            获取窗体的句柄函数
+            </summary>
+            <param name="lpClassName">窗口类名</param>
+            <param name="lpWindowName">窗口标题名</param>
+            <returns>返回句柄</returns>
+        </member>
+        <member name="M:Tools.WindowsHandler.ShowWindowAsync(System.IntPtr,System.Int32)">
+            <summary>
+            通过句柄，窗体显示函数
+            </summary>
+            <param name="hWnd">窗体句柄</param>
+            <param name="cmdShow">显示方式</param>
+            <returns>返工成功与否</returns>
+        </member>
+        <member name="M:Tools.WindowsHandler.FindIntPtrOfWindows(System.String,System.String)">
+            <summary>
+            如果只用窗口标题获取句柄，类名可zhi
+            </summary>
+            <param name="lpClassName"></param>
+            <param name="lpWindowName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Tools.XmlFlexflow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Tools.XmlFlexflow.configFilePath">
+            <summary>
+            配置文件路径名.
+            </summary>
+        </member>
+        <member name="M:Tools.XmlFlexflow.ReadXmlNodeValue(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="NodeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>  
+            连接FTP服务器
+            </summary>  
+            <param name="FtpServerIP">FTP连接地址</param>  
+            <param name="FtpRemotePath">指定FTP连接成功后的当前目录, 如果不指定即默认为根目录</param>  
+            <param name="FtpUserID">用户名</param>  
+            <param name="FtpPassword">密码</param>  
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.Upload(System.String)">
+            <summary>  
+            上传  
+            </summary>   
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.Download(System.String,System.String)">
+            <summary>  
+            下载  
+            </summary>   
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.GetFilesDetailList">
+            <summary>  
+            获取当前目录下明细(包含文件和文件夹)  
+            </summary>  
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.GetAllList(System.String)">
+            <summary>  
+            获取FTP文件列表(包括文件夹)
+            </summary>   
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.MakeDir(System.String)">
+            <summary>  
+            创建文件夹  
+            </summary>   
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.GetFileSize(System.String)">
+            <summary>  
+            获取指定文件大小  
+            </summary>  
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.ReName(System.String,System.String)">
+            <summary>  
+            更改文件名  
+            </summary> 
+        </member>
+        <member name="M:DotNet.Utilities.FTP_Helper.MovieFile(System.String,System.String)">
+            <summary>  
+            移动文件  
+            </summary>  
+        </member>
+    </members>
+</doc>

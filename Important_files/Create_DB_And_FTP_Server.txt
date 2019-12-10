@@ -1,0 +1,5 @@
+1.Server: 		Oracle 11gR2
+2.Client Tools: 	ODTwithODAC1120320_32bit
+3. Database Configuration Assistant 创建数据库: dukepu.
+4. 创建用户： create user dukepu identified by GuXiangQing2019; grant dba to dukepu;
+5. 搭建Ftp Server:  Anonymous 可以访问。  建立AttendanceRecord目录.   /AttendanceRecord: 下存放 (1):	1.0.0.28版本目录。 (2):Version.txt 
