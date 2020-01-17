@@ -287,6 +287,25 @@ namespace Tools
         /// 依据名称查询是否存在Excel进程。
         /// </summary>
         /// <returns></returns>
+        public static bool ifExistsExcelOpened(Form frm)
+        {
+            Process[] vProcesses = Process.GetProcesses();
+            foreach (Process vProcess in vProcesses)
+            {
+                if (vProcess.ProcessName.Equals("EXCEL", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine(vProcess.MainModule.FileName);
+                    frm = new FrmCloseExcel();
+                    frm.ShowDialog();
+                    return true;
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// 依据名称查询是否存在Excel进程。
+        /// </summary>
+        /// <returns></returns>
         public static bool ifExistsExcelOpened()
         {
             Process[] vProcesses = Process.GetProcesses();
@@ -295,7 +314,6 @@ namespace Tools
                 if (vProcess.ProcessName.Equals("EXCEL",StringComparison.OrdinalIgnoreCase))
                 {
                     Console.WriteLine(vProcess.MainModule.FileName);
-                    MessageBox.Show("请先关闭已经打开的Excel!");
                     return true;
                 }
             }
@@ -349,7 +367,6 @@ namespace Tools
             Process[] app = Process.GetProcessesByName(processName);
             if (app.Length > 0)
             {
-                
                 return true;
             }
             else

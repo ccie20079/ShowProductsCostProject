@@ -76,12 +76,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Tools-master\Tools\Tools.csproj">
-      <Project>{f6a0dc14-7c22-4ab6-91c9-c5f7a9f90ca8}</Project>
-      <Name>Tools</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

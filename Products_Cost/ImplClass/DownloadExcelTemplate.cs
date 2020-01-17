@@ -74,7 +74,6 @@ namespace Products_Cost.ImplClass
         /// <returns></returns>
         public MyExcel write_Template_For_Record_P_C()
         {
-            
             path = System.Windows.Forms.Application.StartupPath + "\\模板\\成衣报价.xls";
             string default_dir = System.Windows.Forms.Application.StartupPath + "\\模板";
             DirectoryHelper.createDirecotry(default_dir);
@@ -85,7 +84,7 @@ namespace Products_Cost.ImplClass
             Worksheet wS = myExcel.getFirstWorkSheetAfterOpen();
             Usual_Excel_Helper uEHelper = new Usual_Excel_Helper(wS);
             uEHelper.insertAboveTheSpecificRow(1);
-            uEHelper.setSpecificCellValue("A1", "请在此填写成品名称", 18);
+            uEHelper.setSpecificCellValue("A1", "成衣名称", 18);
             uEHelper.merge("A1", "E1");
             uEHelper.setSpecificCellValue("A3", "1", 12, true);
             myExcel.save();

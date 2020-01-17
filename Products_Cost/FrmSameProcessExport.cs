@@ -41,7 +41,6 @@ namespace Products_Cost
             MyExcel myExcel = new MyExcel(xlsFilePath);
             AppManagement.add(myExcel.open(true));
         }
-
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (CmdHelper.ifExistsTheProcessByName("EXCEL")) {
@@ -59,7 +58,6 @@ namespace Products_Cost
             ShowResult.show(lblResult, "汇总保存于: " + xlsFilePath, true);
             timerRestoreLblResult.Start();
         }
-
         private void FrmSameProcessExport_Load(object sender, EventArgs e)
         {
             this.dgv.DataSource = OracleDaoHelper.getDTBySql(string.Format(@"SELECT * FROM V_Same_Process"));

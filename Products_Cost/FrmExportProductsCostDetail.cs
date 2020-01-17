@@ -90,7 +90,7 @@ namespace Products_Cost
                 return;
             }
             //将图片存于粘贴板中。
-            Clipboard.SetImage(pictureBox.Image);
+            Clipboard.SetImage(this.pictureBox.Image);
             System.Data.DataTable dt = (System.Data.DataTable)dgv.DataSource;
             string PN = dt.Rows[0]["成衣名称"].ToString();
             ExcelHelper.saveDtToExcelWithProgressBar((System.Data.DataTable)dgv.DataSource, xlsFilePath,pb);
@@ -146,14 +146,17 @@ namespace Products_Cost
             //先写标题。
             secondWS.Cells[1, 1] = "序号";
             secondWS.Cells[1, 2] = "成衣名称";
-            secondWS.Cells[1, 3] = "概要工序";
-            secondWS.Cells[1, 4] = "指定工序";
-            secondWS.Cells[1, 5] = "指定每部位工序";
-            secondWS.Cells[1, 6] = "工时";
-            secondWS.Cells[1, 7] = "件数";
-            secondWS.Cells[1, 8] = "单价";
-            secondWS.Cells[1, 9] = "工价";
-            secondWS.Cells[1,10] = "最终工价";
+            secondWS.Cells[1, 3] = "部位";
+            secondWS.Cells[1, 4] = "工序";
+            secondWS.Cells[1, 5] = "单部件";
+            secondWS.Cells[1, 6] = "单部件_件数";
+            //secondWS.Cells[1, 6] = "工时";
+            secondWS.Cells[1, 7] = "单部件_工价";
+            //secondWS.Cells[1, 7] = "件数";
+            secondWS.Cells[1, 8] = "整部位_工时";
+            //secondWS.Cells[1, 8] = "单价";
+            secondWS.Cells[1, 9] = "整部位_工价";
+            secondWS.Cells[1,10] = "最终_工价";
 
             for (int i = 0;i<=dt.Rows.Count-1;i++) {
                 secondWS.Cells[2 + i, 1] = dt.Rows[i]["seq_p_c_record"].ToString();
@@ -161,9 +164,9 @@ namespace Products_Cost
                 secondWS.Cells[2 + i, 3] = dt.Rows[i]["summary_process"].ToString();
                 secondWS.Cells[2 + i, 4] = dt.Rows[i]["specific_process"].ToString();
                 secondWS.Cells[2 + i, 5] = dt.Rows[i]["specific_each_process"].ToString();
-                secondWS.Cells[2 + i, 6] = dt.Rows[i]["man_hours"].ToString();
-                secondWS.Cells[2 + i, 7] = dt.Rows[i]["amount"].ToString();
-                secondWS.Cells[2 + i, 8] = dt.Rows[i]["each_cost"].ToString();
+                secondWS.Cells[2 + i, 6] = dt.Rows[i]["amount"].ToString();
+                secondWS.Cells[2 + i, 7] = dt.Rows[i]["each_cost"].ToString();
+                secondWS.Cells[2 + i, 8] = dt.Rows[i]["man_hours"].ToString();
                 secondWS.Cells[2 + i, 9] = dt.Rows[i]["labour_cost"].ToString();
                 secondWS.Cells[2 + i, 10] = dt.Rows[i]["final_labour_cost"].ToString();
             }
@@ -172,7 +175,7 @@ namespace Products_Cost
 
             uEHelper = new Usual_Excel_Helper(secondWS);
             _range_final_labour_cost = uEHelper.getRange("J2", "J" + secondWS.UsedRange.Rows.Count);
-            uEHelper.setFormulaR1C1ForRange(_range_final_labour_cost, "=IF(OR(ISBLANK(RC[-3]),ISBLANK(RC[-2])),RC[-1],RC[-3]*RC[-2])");
+            uEHelper.setFormulaR1C1ForRange(_range_final_labour_cost, "=IF(OR(ISBLANK(RC[-4]),ISBLANK(RC[-3])),RC[-1],RC[-4]*RC[-3])");
             
             secondWS.UsedRange.EntireColumn.AutoFit();
             myExcel.save();

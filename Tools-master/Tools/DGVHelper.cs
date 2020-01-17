@@ -24,8 +24,8 @@ namespace Tools
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgv.ColumnHeadersHeight = 40;
             dgv.RowTemplate.Height = 30;
+
             DataGridViewCellStyle dataGridViewCellStyle = new DataGridViewCellStyle();
-            
             dataGridViewCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -33,6 +33,7 @@ namespace Tools
             dataGridViewCellStyle.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+
             dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle;
             dgv.ColumnHeadersHeight = 53;
             //dgv.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -43,6 +44,14 @@ namespace Tools
             dgv.RowPostPaint += new DataGridViewRowPostPaintEventHandler(myDgv_RowPostPaint_Event);
             AutoSizeColumn(dgv);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            /*
+            //单元格内容居中
+            foreach (DataGridViewColumn item in dgv.Columns) {
+                item.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                //item.SortMode = DataGridViewColumnSortMode.NotSortable;     //列标题右边有预留一个排序小箭头的位置
+            }
+            */
             dgv.CellMouseMove += new DataGridViewCellMouseEventHandler(dgv_CellMouseMove);
             dgv.CellMouseLeave += new DataGridViewCellEventHandler(dgv_CellMouseLeave);
         }

@@ -192,6 +192,9 @@
     <None Include="update\UpdateProgram.vshost.exe.manifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="成本汇总\ProductsCostSummaryTemplate.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -266,16 +269,10 @@
     <Content Include="update\Tools.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="update\Tools.pdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="update\Tools.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="update\UpdateProgram.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="update\UpdateProgram.pdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="update\UpdateProgram.vshost.exe">
@@ -288,7 +285,7 @@
       <Name>Excel</Name>
     </ProjectReference>
     <ProjectReference Include="..\LoginSystem\LoginSystem.csproj">
-      <Project>{69DA687E-029C-476E-8771-FCA56D5BDA41}</Project>
+      <Project>{69da687e-029c-476e-8771-fca56d5bda41}</Project>
       <Name>LoginSystem</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tools-master\Tools\Tools.csproj">

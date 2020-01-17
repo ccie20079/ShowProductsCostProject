@@ -375,6 +375,9 @@ namespace Excel
             if (null == WBook) {
                 open();
             }
+            if (WBook.Sheets.Count<=1) {
+                WBook.Sheets.Add(Type.Missing, WBook.Sheets[1]);
+            }
             Worksheet wS = ((Worksheet)(WBook.Sheets[2]));
             _secondWS = wS;
             return wS;
@@ -382,6 +385,9 @@ namespace Excel
         public Worksheet getThirdWorksheetAfterOpen() {
             if (null == WBook) {
                 open();
+            }
+            if (WBook.Sheets.Count <= 2) {
+                WBook.Sheets.Add(Type.Missing, WBook.Sheets[2]);
             }
             Worksheet wS = ((Worksheet)(WBook.Sheets[3]));
             _thirdWS = wS;

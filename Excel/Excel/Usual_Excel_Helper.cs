@@ -1672,6 +1672,25 @@ namespace Excel
             */
             range_desc.PasteSpecial(XlPasteType.xlPasteAll, XlPasteSpecialOperation.xlPasteSpecialOperationNone, false, true);
         }
+        public void pastePicture(Range range_desc, string picturePath) {
+            string tempStr = string.Format(@"<table><img src = ""{0}"" height = ""123"" width = ""155.9"">", picturePath);
+            Clipboard.SetText(tempStr);
+            range_desc.PasteSpecial(XlPasteType.xlPasteAll, XlPasteSpecialOperation.xlPasteSpecialOperationNone, false, true);
+        }
+        public void paste(Range range_desc)
+        {
+            /*
+                Range("D2:D32").Select
+                Selection.Copy
+                Range("K5").Select
+                Selection.PasteSpecial Paste:= xlPasteAll, Operation:= xlNone, SkipBlanks:= _
+                    False, transpose:= True
+                Cells.Select
+                Cells.EntireColumn.AutoFit
+                Range("O21").Select
+            */
+            range_desc.PasteSpecial(XlPasteType.xlPasteAll, XlPasteSpecialOperation.xlPasteSpecialOperationNone, false, true);
+        }
         public void set_Value_By_Sum_With_Col_Offset(Range range,int start_col_index_RC,int end_col_index_RC) {
             //ActiveCell.FormulaR1C1 = "=SUM(RC[-4]:RC[-3])"
             range.FormulaR1C1 = string.Format(@"=SUM(RC[{0}]:RC[{1}])",start_col_index_RC,end_col_index_RC);

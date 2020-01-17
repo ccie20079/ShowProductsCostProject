@@ -395,7 +395,7 @@
             this.tsBtnExportProductsCostDetail.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnExportProductsCostDetail.Name = "tsBtnExportProductsCostDetail";
             this.tsBtnExportProductsCostDetail.Size = new System.Drawing.Size(108, 33);
-            this.tsBtnExportProductsCostDetail.Text = "成品信息导出";
+            this.tsBtnExportProductsCostDetail.Text = "成衣信息导出";
             this.tsBtnExportProductsCostDetail.Click += new System.EventHandler(this.tsBtnExportProductsCostDetail_Click);
             // 
             // tbProductsRecordReportExport
@@ -431,13 +431,13 @@
             this.cms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showTemplateToolStripMenuItem});
             this.cms.Name = "cms";
-            this.cms.Size = new System.Drawing.Size(138, 26);
+            this.cms.Size = new System.Drawing.Size(141, 26);
             // 
             // showTemplateToolStripMenuItem
             // 
             this.showTemplateToolStripMenuItem.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.showTemplateToolStripMenuItem.Name = "showTemplateToolStripMenuItem";
-            this.showTemplateToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.showTemplateToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.showTemplateToolStripMenuItem.Text = "显示模板";
             this.showTemplateToolStripMenuItem.Click += new System.EventHandler(this.showTemplateToolStripMenuItem_Click);
             // 
@@ -451,7 +451,6 @@
             this.Name = "FrmMainOfProductsCost";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "成衣报价";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMainOfProductsCost_FormClosed);
             this.Load += new System.EventHandler(this.FrmMainOfAttendanceRecord_Load);

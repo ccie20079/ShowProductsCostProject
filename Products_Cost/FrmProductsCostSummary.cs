@@ -19,6 +19,8 @@ namespace Products_Cost
     {
         string defaultDir = Application.StartupPath + "\\ProductCost\\";
         IShowProductsCostSummary showProductsCostSummary = null;
+
+        string destFilePath = string.Empty;
         public FrmProductsCostSummary()
         {
             InitializeComponent();
@@ -295,6 +297,76 @@ namespace Products_Cost
             }
             string productName = dr.Cells["product_name"].Value.ToString();
             //getPictureByProductName(productName, pictureBox);
+        }
+        /// <summary>
+        //  导出至Excel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExportToExceltoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRowCollection drRows = this.dgv.Rows;
+            if (drRows.Count == 0) return;
+
+            Form frm = new Form();
+            //1. 先确定 image path
+            if (CmdHelper.ifExistsExcelOpened(frm)) {
+                return;
+            }
+               //2. 打开Excel
+               //先获取时间字符串
+            string currTimeStr = TimeHelper.getCurrentTimeStr();
+            string xlsFileName= "成衣成本汇总_" + currTimeStr + ".xls";
+            string srcFilePath = Application.StartupPath + "\\成本汇总\\ProductsCostSummaryTemplate.xls";
+            string destDir = Application.StartupPath + "\\成本汇总\\";
+            string destFileName = xlsFileName;
+            CmdHelper.copyFileToDestDirWithNewFileName(srcFilePath, destDir, destFileName);
+            //目的文件名为： 
+            destFilePath = destDir + xlsFileName;
+            MyExcel myExcel = new MyExcel(destFilePath);
+            myExcel.open();
+            Usual_Excel_Helper uEHelper = new Usual_Excel_Helper(myExcel.getFirstWorkSheetAfterOpen());
+               
+            for (int index = 0; index <= drRows.Count-1;index++ ) {
+                DataGridViewRow currRow =drRows[index];
+                
+                string product_name = currRow.Cells["Product_Name"].Value.ToString();
+                uEHelper.setSpecificCellValue("A" + (2 + index).ToString(), product_name);
+                //(drRow.Cells["product_name"]
+                uEHelper.setSpecificCellValue("B" + (2 + index).ToString(), currRow.Cells["total_man_hours"].Value.ToString());
+                uEHelper.setSpecificCellValue("C" + (2 + index).ToString(), currRow.Cells["total_labour_cost"].Value.ToString());
+                uEHelper.setSpecificCellValue("D" + (2 + index).ToString(), currRow.Cells["supplier"].Value.ToString());
+                uEHelper.setSpecificCellValue("E" + (2 + index).ToString(), currRow.Cells["latest_update_time"].Value.ToString());
+                //picture
+                //保存此图片
+                //Image image = ((Image)(currRow.Cells["picture"].Value));
+                byte[] pictureByteArray =(byte[])currRow.Cells["picture"].Value;
+                Image image = PictureHelper.ReturnPhoto(pictureByteArray);
+
+                string picPath = string.Format(@"{0}\{1}.jpg", destDir, product_name);
+                image.Save(picPath, image.RawFormat);
+        
+                Microsoft.Office.Interop.Excel.Range range = uEHelper.getRange("F" + (2 + index).ToString(), "F" + (2 + index).ToString());
+                uEHelper.pastePicture(range, picPath);
+            }
+            myExcel.saveWithoutAutoFit();
+            myExcel.close();
+
+            ShowResult.show(lblResult, string.Format(@"导出完毕，存于：{0}",destFilePath), true);
+            timerRestoreLabel.Start();
+
+        }
+        private void timerRestoreLabel_Tick(object sender, EventArgs e)
+        {
+            timerRestoreLabel.Stop();
+            lblResult.BackColor = this.BackColor;
+            lblResult.Text = "";
+
+        }
+        private void lblResult_Click(object sender, EventArgs e)
+        {
+            MyExcel myExcel = new MyExcel(destFilePath);
+            myExcel.open(true);
         }
     }
 }

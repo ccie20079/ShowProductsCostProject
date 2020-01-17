@@ -1,0 +1,16 @@
+﻿[*.cs]
+
+# CS1587: XML 注释没有放在有效语言元素上
+dotnet_diagnostic.CS1587.severity = error
+
+# CS1572: XML 注释中有 param 标记，但是没有该名称的参数
+dotnet_diagnostic.CS1572.severity = warning
+
+# IDE1006: 命名样式
+dotnet_diagnostic.IDE1006.severity = silent
+
+# IDE0059: 不需要赋值
+csharp_style_unused_value_assignment_preference = discard_variable:silent
+
+# IDE0018: 内联变量声明
+csharp_style_inlined_variable_declaration = true:silent
