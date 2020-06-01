@@ -149,5 +149,15 @@ namespace Products_Cost
             frmSameProcessExport.MdiParent = this;
             frmSameProcessExport.Show();
         }
+        /// <summary>
+        /// 导入小组月产量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void importEachOneQuatitiesOfMonthReportToolStripButton_Click(object sender, EventArgs e)
+        {
+              
+        }
+
     }
 }

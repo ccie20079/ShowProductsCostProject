@@ -280,17 +280,21 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Excel\Excel\Excel.csproj">
+    <ProjectReference Include="..\..\Excel\Excel\Excel.csproj">
       <Project>{b6115b10-3712-4534-8124-0027f28a5c8e}</Project>
       <Name>Excel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Tools-master\Tools\Tools.csproj">
+      <Project>{f6a0dc14-7c22-4ab6-91c9-c5f7a9f90ca8}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UpdateProgram\UpdateProgram\UpdateProgram.csproj">
+      <Project>{3449ef88-849a-47d6-82cb-4a577f9cc687}</Project>
+      <Name>UpdateProgram</Name>
     </ProjectReference>
     <ProjectReference Include="..\LoginSystem\LoginSystem.csproj">
       <Project>{69da687e-029c-476e-8771-fca56d5bda41}</Project>
       <Name>LoginSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tools-master\Tools\Tools.csproj">
-      <Project>{f6a0dc14-7c22-4ab6-91c9-c5f7a9f90ca8}</Project>
-      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

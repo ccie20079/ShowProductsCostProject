@@ -78,6 +78,7 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importEachOneQuatitiesOfMonthReportToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.cms.SuspendLayout();
             this.SuspendLayout();
@@ -349,7 +350,8 @@
             this.tsBtnProductsCostSummary,
             this.tsBtnExportProductsCostDetail,
             this.tbProductsRecordReportExport,
-            this.tsBtnDefaultProcessExport});
+            this.tsBtnDefaultProcessExport,
+            this.importEachOneQuatitiesOfMonthReportToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1337, 36);
@@ -441,6 +443,17 @@
             this.showTemplateToolStripMenuItem.Text = "显示模板";
             this.showTemplateToolStripMenuItem.Click += new System.EventHandler(this.showTemplateToolStripMenuItem_Click);
             // 
+            // importEachOneQuatitiesOfMonthReportToolStripButton
+            // 
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("importEachOneQuatitiesOfMonthReportToolStripButton.Image")));
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Name = "importEachOneQuatitiesOfMonthReportToolStripButton";
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Size = new System.Drawing.Size(124, 33);
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Text = "导入小组月产量";
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Click += new System.EventHandler(this.importEachOneQuatitiesOfMonthReportToolStripButton_Click);
+            // 
             // FrmMainOfProductsCost
             // 
             this.ClientSize = new System.Drawing.Size(1337, 685);
@@ -513,6 +526,7 @@
         private System.Windows.Forms.ToolStripButton tbProductsRecordReportExport;
         private System.Windows.Forms.ToolStripButton tsBtnDownLoadTemplate;
         private System.Windows.Forms.ToolStripButton tsBtnDefaultProcessExport;
+        private System.Windows.Forms.ToolStripButton importEachOneQuatitiesOfMonthReportToolStripButton;
         #endregion
 
         /*

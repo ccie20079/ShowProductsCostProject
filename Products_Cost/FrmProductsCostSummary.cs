@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Tools;
 using System.IO;
-using Excel;
 using Oracle.DataAccess.Client;
-using System.Data.OleDb;
 using Products_Cost.Interface;
 using Products_Cost.ImplClass;
+using Excel;
+
 namespace Products_Cost
 {
     public partial class FrmProductsCostSummary : Form
@@ -308,10 +304,11 @@ namespace Products_Cost
             DataGridViewRowCollection drRows = this.dgv.Rows;
             if (drRows.Count == 0) return;
 
-            Form frm = new Form();
+            
             //1. 先确定 image path
-            if (CmdHelper.ifExistsExcelOpened(frm)) {
-                return;
+            if (CmdHelper.ifExistsTheProcessByName("excel")||CmdHelper.ifExistsTheProcessByName("et")) {
+                Tools.FrmPrompt frmPrompt = new Tools.FrmPrompt("excel.exe|et.exe");
+                frmPrompt.ShowDialog();
             }
                //2. 打开Excel
                //先获取时间字符串
@@ -324,7 +321,7 @@ namespace Products_Cost
             //目的文件名为： 
             destFilePath = destDir + xlsFileName;
             MyExcel myExcel = new MyExcel(destFilePath);
-            myExcel.open();
+            myExcel.open(true);
             Usual_Excel_Helper uEHelper = new Usual_Excel_Helper(myExcel.getFirstWorkSheetAfterOpen());
                
             for (int index = 0; index <= drRows.Count-1;index++ ) {

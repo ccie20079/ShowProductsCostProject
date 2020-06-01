@@ -262,7 +262,7 @@ namespace Products_Cost
         {
             //确认关闭已经打开的Excel
             if (CmdHelper.ifExistsTheProcessByName("EXCEL")) {
-                FrmCloseExcel frmCloseExcel = new FrmCloseExcel();
+                Tools.FrmPrompt frmCloseExcel = new Tools.FrmPrompt("excel.exe|et.exe");
                 frmCloseExcel.ShowDialog();
             }
             string xlsFilePath = FileNameDialog.getSelectedFilePathWithDefaultDir("请选择成衣成本记录：", "*.xls,*.xlsx|*.xls;*.xlsx", defaultDir);

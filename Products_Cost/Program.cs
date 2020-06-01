@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Tools;
+
 namespace Products_Cost
 {
     static class Program
@@ -36,8 +37,9 @@ namespace Products_Cost
 
             bool resultFlag = DownloadTheLatestApp.downloadTheLatestVersionAndInitConnStr();
             if (!resultFlag) return;
+            bool flag_open_mes_db_server = false;
             //设置连接数据库字符串的值.
-            SetTheValueOfTheDatabaseConnStr.setTheValueOfTheConnStr();
+            SetTheValueOfTheDatabaseConnStr.setTheValueOfTheConnStr(out flag_open_mes_db_server);
             doNext();
         }
         /// <summary>

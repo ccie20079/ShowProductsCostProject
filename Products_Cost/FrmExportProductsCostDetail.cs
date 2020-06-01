@@ -76,9 +76,9 @@ namespace Products_Cost
             }
             //加载图片
             cbPN_SelectedIndexChanged(sender, e);
-            if (CmdHelper.ifExistsTheProcessByName("EXCEL"))
+            if (CmdHelper.ifExistsTheProcessByName("EXCEL")||CmdHelper.ifExistsTheProcessByName("et"))
             {
-                FrmCloseExcel frmCloseExcel = new FrmCloseExcel();
+                Tools.FrmPrompt frmCloseExcel = new Tools.FrmPrompt("excel.exe|et.exe");
                 frmCloseExcel.ShowDialog();
             }
             //导出到Excel中
