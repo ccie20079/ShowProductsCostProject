@@ -38,6 +38,7 @@ namespace Products_Cost
         FrmExportProductsCostDetail frmExportProductsCostDetail = null;
         private FrmDLProductsRecordTemplate frmDLProductsRecordTemplate = null;
         private FrmSameProcessExport frmSameProcessExport = null;
+        private FrmImportEachOneQuantitiesOfTheLine frmImportEachOneQuantitiesOfTheLine = null;
         public FrmMainOfProductsCost()
         {
             InitializeComponent();
@@ -156,7 +157,13 @@ namespace Products_Cost
         /// <param name="e"></param>
         private void importEachOneQuatitiesOfMonthReportToolStripButton_Click(object sender, EventArgs e)
         {
-              
+             //先判断品名是否填写。
+            if (frmImportEachOneQuantitiesOfTheLine == null || frmImportEachOneQuantitiesOfTheLine.IsDisposed)
+            {
+                frmImportEachOneQuantitiesOfTheLine = new FrmImportEachOneQuantitiesOfTheLine();
+            }
+            frmImportEachOneQuantitiesOfTheLine.MdiParent = this;
+            frmImportEachOneQuantitiesOfTheLine.Show();
         }
 
     }
