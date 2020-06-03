@@ -108,7 +108,6 @@ namespace Tools
             this.myExcel= new MyExcel(xlsFilePath);
             myExcel.open(false);
             this.percentProgress= 0;
-            
             //开始读取Excel中的内容。
             //1. 产量记录从第三行，第六列开始。
             //2. 产量记录到第几列结束了？
@@ -118,14 +117,36 @@ namespace Tools
             this.validMaxColIndex= uEHelper.getColIndexOfSpecificContentInSpecificRow(2,1,uEHelper.getMaxColIndex(),"终止标识")-1;
             //获取最大行从第三行起为序号行,当第1列，第一次出现为空的行时，即最大行。
             this.validMaxRowIndex = uEHelper.getMaxRowIndexBeforeBlankCell(1);
-            //1.先检查工序列有没有工序为空的
+            string pn, year_and_month_str, lineName, teamName;
+            //判断是否已经存在该线体的月报表
+            string contentOfA1 = uEHelper.getCellContentByRowAndColIndex(1, 1);
+            //1.判断产品名_组_月份格式是否正确。
+            bool flag = StringHelper.checkPN_Team_Month(contentOfA1, out pn, out year_and_month_str, out lineName, out teamName);
+            if (!flag)
+            {
+                msg.Flag = false;
+                msg.Msg = "报表中A1单元格内容格式应为：产品名_衬衣1组_3月";
+                this.readDataToDB_bgWorker.ReportProgress(0, msg);
+                myExcel.close();
+                return;
+            }
+            //2.判断该组,在某月，某线体，所作的某产品 在数据库中是否已经有记录？
+            System.Data.DataTable dt = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_month_team_report(pn, year_and_month_str, lineName, teamName);
+            if (dt.Rows.Count > 0) {
+                msg.Flag = false;
+                msg.Msg = string.Format(@"{0}: 线体(地点):{1},组名：{2},月份: {3}  已经存在！",pn,lineName,teamName,year_and_month_str);
+                this.readDataToDB_bgWorker.ReportProgress(0, msg);
+                myExcel.close();
+                return;
+            }
+            //3.先检查工序列有没有工序为空的
             msg = checkValidityOfAllProcesses();
             if (!msg.Flag) {
                 this.readDataToDB_bgWorker.ReportProgress(0, msg);
                 myExcel.close();
                 return;
             }
-            //2.检查金额列有无空或者为0.00的数值
+            //4.检查金额列有无空或者为0.00的数值
             msg = checkValidityOfAmountOfMoneyOfAllProcesses();
             if (!msg.Flag)
             {
@@ -133,21 +154,9 @@ namespace Tools
                 myExcel.close();
                 return;
             }
-            //判断是否已经存在该线体的月报表
-            string contentOfA1 = uEHelper.getCellContentByRowAndColIndex(1, 1);
-            string pn,year_and_month_str, lineName, teamName;
-            //3.判断产品名_组_月份格式是否正确。
-            bool flag = StringHelper.checkPN_Team_Month(contentOfA1,out pn,out year_and_month_str,out lineName,out teamName);
-            if (!flag) {
-                msg.Flag = false;
-                msg.Msg = "报表中A1单元格内容格式应为：产品名_衬衣1组_3月";
-                this.readDataToDB_bgWorker.ReportProgress(0, msg);
-                myExcel.close();
-                return;
-            }
-            List<NameAndOtherTeam> nameAndOtherTeamList = null;
-            //4. 检查所有的姓名是否符合格式
-            msg = checkValidityOfAllNameOfLine_Yields_Report(out nameAndOtherTeamList);
+            List<NameAndRealTeam> nameAndRealTeamList = null;
+            //5. 检查所有的姓名是否符合格式
+            msg = checkValidityOfAllNameOfLine_Yields_Report(out nameAndRealTeamList);
             if (!msg.Flag) {
                 this.readDataToDB_bgWorker.ReportProgress(0, msg);
                 myExcel.close();
@@ -160,8 +169,8 @@ namespace Tools
             msg.Msg = "准备读取数据...";
             readDataToDB_bgWorker.ReportProgress(0, msg);
             //自第(3,6)开始
-            for (int currRowIndex = 3;currRowIndex<=validMaxRowIndex;currRowIndex ++) {
-                for (int currColIndex = 6; currColIndex <= validMaxColIndex; currColIndex++) {
+            for (int currColIndex = 6; currColIndex <= validMaxColIndex; currColIndex++) {
+                for (int currRowIndex = 3; currRowIndex <= validMaxRowIndex; currRowIndex++) {
                     count++;
                     string contentStr = uEHelper.getCellContentByRowAndColIndex(currRowIndex,currColIndex);
                     //为空，定位到下一个单元格。
@@ -183,7 +192,7 @@ namespace Tools
                     //判断是否为整数
                     Line_Each_One_Quantities each_One_Quantities = new Line_Each_One_Quantities();
                     each_One_Quantities.Line_Name = lineName;
-                    
+                    each_One_Quantities.Team_name = teamName;
                     each_One_Quantities.Products_name = pn;
                     each_One_Quantities.Year_and_month_str = year_and_month_str;
                     each_One_Quantities.Quantities = quantities;
@@ -194,48 +203,50 @@ namespace Tools
                     each_One_Quantities.Man_hour = int.Parse( uEHelper.getCellContentByRowAndColIndex(currRowIndex, 4));
                     each_One_Quantities.Amount_of_money = decimal.Parse(uEHelper.getCellContentByRowAndColIndex(currRowIndex, 5));
                     //记录姓名,姓名,自第6列开始。
-                    string otherTeamName = nameAndOtherTeamList[currColIndex - 6].Other_team_name;
-                    if (!string.IsNullOrEmpty(otherTeamName))
+                    string realTeamName = nameAndRealTeamList[currColIndex - 6].Real_team_name;
+                    if (!string.IsNullOrEmpty(realTeamName))
                     {
-                        each_One_Quantities.Team_name = otherTeamName;
+                        each_One_Quantities.Real_team_name = realTeamName;
                     }
                     else {
-                        each_One_Quantities.Team_name = teamName;
+                        each_One_Quantities.Real_team_name = teamName;
                     }
-                    each_One_Quantities.Emp_name = nameAndOtherTeamList[currColIndex - 6].Emp_name;
+                    each_One_Quantities.Emp_name = nameAndRealTeamList[currColIndex - 6].Emp_name;
                     line_each_one_quantities_list.Add(each_One_Quantities);
                     readDataToDB_bgWorker.ReportProgress((count *100 / maxmium));
                 }
             }
             msg.Flag = true;
-            msg.Msg = "准备提交数据";
+            msg.Msg = "提交数据中...";
             readDataToDB_bgWorker.ReportProgress(0, msg);
             count = 0;
             //开始提交数据.
             maxmium = line_each_one_quantities_list.Count;
             for (int i = 0; i < maxmium; i++) {
                 count++;
-                readDataToDB_bgWorker.ReportProgress((count * 100 / maxmium) );
+                readDataToDB_bgWorker.ReportProgress((count * 100 / maxmium));
                 line_each_one_quantities_list[i].save();
             }
+            msg.Msg = "提交完成。";
+            readDataToDB_bgWorker.ReportProgress((count * 100 / maxmium),msg);
             myExcel.close();
         }
-        private MSG checkValidityOfAllNameOfLine_Yields_Report(out List<NameAndOtherTeam> nameAndTeamList)
+        private MSG checkValidityOfAllNameOfLine_Yields_Report(out List<NameAndRealTeam> nameAndTeamList)
         {
             MSG msg = new MSG();
-            List<NameAndOtherTeam> theNameAndTeamList = new List<NameAndOtherTeam>();
+            List<NameAndRealTeam> theNameAndTeamList = new List<NameAndRealTeam>();
             //姓名从(2,6)开始
             for (int currColIndex = 6; currColIndex <= validMaxColIndex; currColIndex++) {
                 string nameStr = uEHelper.getCellContentByRowAndColIndex(2, currColIndex);
-                string otherTeamName, empName;
-                bool flag = StringHelper.checkNameOfLine_Yields_Report(nameStr, out otherTeamName, out empName);
+                string realTeamName, empName;
+                bool flag = StringHelper.checkNameOfLine_Yields_Report(nameStr, out realTeamName, out empName);
                 if (!flag) {
                     msg.Msg = string.Format(@"第2行，{0}列，姓名格式不一致!",currColIndex);
                     nameAndTeamList = null;
                     return msg;
                 }
-                NameAndOtherTeam nameAndOtherTeam = new NameAndOtherTeam();
-                nameAndOtherTeam.Other_team_name = otherTeamName;
+                NameAndRealTeam nameAndOtherTeam = new NameAndRealTeam();
+                nameAndOtherTeam.Real_team_name = realTeamName;
                 nameAndOtherTeam.Emp_name = empName;
                 theNameAndTeamList.Add(nameAndOtherTeam);
             }

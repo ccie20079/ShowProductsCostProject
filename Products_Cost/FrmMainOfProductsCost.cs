@@ -39,6 +39,7 @@ namespace Products_Cost
         private FrmDLProductsRecordTemplate frmDLProductsRecordTemplate = null;
         private FrmSameProcessExport frmSameProcessExport = null;
         private FrmImportEachOneQuantitiesOfTheLine frmImportEachOneQuantitiesOfTheLine = null;
+        private FrmQueryTeamAndLine_Quantities frmQueryTeamAndLine_Quantities = null;
         public FrmMainOfProductsCost()
         {
             InitializeComponent();
@@ -166,5 +167,14 @@ namespace Products_Cost
             frmImportEachOneQuantitiesOfTheLine.Show();
         }
 
+        private void queryQuantitiesOfTeamToolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (frmQueryTeamAndLine_Quantities == null || frmQueryTeamAndLine_Quantities.IsDisposed)
+            {
+                frmQueryTeamAndLine_Quantities = new FrmQueryTeamAndLine_Quantities();
+            }
+            frmQueryTeamAndLine_Quantities.MdiParent = this;
+            frmQueryTeamAndLine_Quantities.Show();
+        }
     }
 }

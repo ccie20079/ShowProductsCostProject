@@ -75,10 +75,11 @@
             this.tsBtnExportProductsCostDetail = new System.Windows.Forms.ToolStripButton();
             this.tbProductsRecordReportExport = new System.Windows.Forms.ToolStripButton();
             this.tsBtnDefaultProcessExport = new System.Windows.Forms.ToolStripButton();
+            this.importEachOneQuatitiesOfMonthReportToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importEachOneQuatitiesOfMonthReportToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.queryQuantitiesOfTeamToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.cms.SuspendLayout();
             this.SuspendLayout();
@@ -351,7 +352,8 @@
             this.tsBtnExportProductsCostDetail,
             this.tbProductsRecordReportExport,
             this.tsBtnDefaultProcessExport,
-            this.importEachOneQuatitiesOfMonthReportToolStripButton});
+            this.importEachOneQuatitiesOfMonthReportToolStripButton,
+            this.queryQuantitiesOfTeamToolStripButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1337, 36);
@@ -422,6 +424,17 @@
             this.tsBtnDefaultProcessExport.Text = "同名工序导出";
             this.tsBtnDefaultProcessExport.Click += new System.EventHandler(this.tsBtnDefaultProcessExport_Click);
             // 
+            // importEachOneQuatitiesOfMonthReportToolStripButton
+            // 
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("importEachOneQuatitiesOfMonthReportToolStripButton.Image")));
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Name = "importEachOneQuatitiesOfMonthReportToolStripButton";
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Size = new System.Drawing.Size(124, 33);
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Text = "导入小组月产量";
+            this.importEachOneQuatitiesOfMonthReportToolStripButton.Click += new System.EventHandler(this.importEachOneQuatitiesOfMonthReportToolStripButton_Click);
+            // 
             // notifyIcon
             // 
             this.notifyIcon.ContextMenuStrip = this.cms;
@@ -443,16 +456,16 @@
             this.showTemplateToolStripMenuItem.Text = "显示模板";
             this.showTemplateToolStripMenuItem.Click += new System.EventHandler(this.showTemplateToolStripMenuItem_Click);
             // 
-            // importEachOneQuatitiesOfMonthReportToolStripButton
+            // queryQuantitiesOfTeamToolStripButton1
             // 
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("importEachOneQuatitiesOfMonthReportToolStripButton.Image")));
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.Name = "importEachOneQuatitiesOfMonthReportToolStripButton";
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.Size = new System.Drawing.Size(124, 33);
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.Text = "导入小组月产量";
-            this.importEachOneQuatitiesOfMonthReportToolStripButton.Click += new System.EventHandler(this.importEachOneQuatitiesOfMonthReportToolStripButton_Click);
+            this.queryQuantitiesOfTeamToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.queryQuantitiesOfTeamToolStripButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.queryQuantitiesOfTeamToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("queryQuantitiesOfTeamToolStripButton1.Image")));
+            this.queryQuantitiesOfTeamToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.queryQuantitiesOfTeamToolStripButton1.Name = "queryQuantitiesOfTeamToolStripButton1";
+            this.queryQuantitiesOfTeamToolStripButton1.Size = new System.Drawing.Size(108, 33);
+            this.queryQuantitiesOfTeamToolStripButton1.Text = "查询小组产量";
+            this.queryQuantitiesOfTeamToolStripButton1.Click += new System.EventHandler(this.queryQuantitiesOfTeamToolStripButton1_Click);
             // 
             // FrmMainOfProductsCost
             // 
@@ -527,6 +540,7 @@
         private System.Windows.Forms.ToolStripButton tsBtnDownLoadTemplate;
         private System.Windows.Forms.ToolStripButton tsBtnDefaultProcessExport;
         private System.Windows.Forms.ToolStripButton importEachOneQuatitiesOfMonthReportToolStripButton;
+        private System.Windows.Forms.ToolStripButton queryQuantitiesOfTeamToolStripButton1;
         #endregion
 
         /*
