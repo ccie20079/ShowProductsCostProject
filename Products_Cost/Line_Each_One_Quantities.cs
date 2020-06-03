@@ -79,7 +79,7 @@ namespace Products_Cost
         /// <param name="year_and_month_str"></param>
         internal static void deleteTheQuantities(string team_name, string pn, string year_and_month_str)
         {
-            StringBuilder sBuilder = new StringBuilder(string.Format(@"delete from Line_Each_One_Quantities where year_and_month = to_date('{0}','yyyy-MM') ",year_and_month_str));
+            StringBuilder sBuilder = new StringBuilder(string.Format(@"delete from Line_Each_One_Quantities where trunc(year_and_month,'MM') = to_date('{0}','yyyy-MM') ",year_and_month_str));
             if (!string.IsNullOrEmpty(team_name)) {
                 sBuilder.Append(string.Format(@" and team_name = '{0}'", team_name));
             }
@@ -106,7 +106,7 @@ namespace Products_Cost
                                                         insert_time
                                                 from Line_Each_One_Quantities
                                                 where products_name = '{0}'
-                                                and year_and_month= to_date('{1}','yyyy-MM')
+                                                and trunc(year_and_month,'MM')= to_date('{1}','yyyy-MM')
                                                 and line_name = '{2}'
                                                 and team_name = '{3}'
                                                 order by line_name,
@@ -125,7 +125,7 @@ namespace Products_Cost
                                                                                         team_name,
                                                                                         seq
                                                       from Line_Each_One_Quantities
-                                                      where  year_and_month= to_date('{0}','yyyy-MM')
+                                                      where  trunc(year_and_month,'MM')= to_date('{0}','yyyy-MM')
                                                 ) temp 
                                                 where g_seq = 1
                                                 order by seq asc", year_and_month_str);
@@ -141,7 +141,7 @@ namespace Products_Cost
                                                                                         products_name,
                                                                                         seq
                                                       from Line_Each_One_Quantities
-                                                      where  year_and_month= to_date('{0}','yyyy-MM')
+                                                      where  trunc(year_and_month,'MM')= to_date('{0}','yyyy-MM')
                                                       and team_name = '{1}'
                                                 ) temp 
                                                 where g_seq = 1
@@ -167,7 +167,7 @@ namespace Products_Cost
                                             from Line_Each_One_Quantities
                                             where team_name = '{0}'
                                             and products_name = '{1}'
-                                            and year_and_month= to_date('{2}','yyyy-MM')", team_name,pn, year_and_month_str);
+                                            and trunc(year_and_month,'MM')= to_date('{2}','yyyy-MM')", team_name,pn, year_and_month_str);
             DataTable dt = OracleDaoHelper.getDTBySql(sqlStr);
             return dt;
         }

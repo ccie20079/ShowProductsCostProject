@@ -73,11 +73,23 @@
     <Compile Include="FrmImportEachOneQuantities.Designer.cs">
       <DependentUpon>FrmImportEachOneQuantities.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmImportQuantitiesOfOddJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImportQuantitiesOfOddJob.Designer.cs">
+      <DependentUpon>FrmImportQuantitiesOfOddJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmImportPictureOfProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmImportPictureOfProduct.Designer.cs">
       <DependentUpon>FrmImportPictureOfProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQueryOddJobAndExportToExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQueryOddJobAndExportToExcel.Designer.cs">
+      <DependentUpon>FrmQueryOddJobAndExportToExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmQueryTeamAndLine_Quantities.cs">
       <SubType>Form</SubType>
@@ -139,6 +151,7 @@
     <Compile Include="Interface\IShowProductsCostDetail.cs" />
     <Compile Include="Line_Each_One_Quantities.cs" />
     <Compile Include="NameAndRealTeam.cs" />
+    <Compile Include="OddJob.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="test.cs" />
@@ -152,8 +165,14 @@
     <EmbeddedResource Include="FrmImportEachOneQuantities.resx">
       <DependentUpon>FrmImportEachOneQuantities.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmImportQuantitiesOfOddJob.resx">
+      <DependentUpon>FrmImportQuantitiesOfOddJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmImportPictureOfProduct.resx">
       <DependentUpon>FrmImportPictureOfProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQueryOddJobAndExportToExcel.resx">
+      <DependentUpon>FrmQueryOddJobAndExportToExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQueryTeamAndLine_Quantities.resx">
       <DependentUpon>FrmQueryTeamAndLine_Quantities.cs</DependentUpon>
@@ -299,7 +318,7 @@
     <Content Include="update\UpdateProgram.vshost.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="班组产量\班组产量.txt">
+    <Content Include="班组产量.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

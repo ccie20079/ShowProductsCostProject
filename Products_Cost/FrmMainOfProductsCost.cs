@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Tools;
 using Products_Cost.Interface;
@@ -40,6 +34,8 @@ namespace Products_Cost
         private FrmSameProcessExport frmSameProcessExport = null;
         private FrmImportEachOneQuantitiesOfTheLine frmImportEachOneQuantitiesOfTheLine = null;
         private FrmQueryTeamAndLine_Quantities frmQueryTeamAndLine_Quantities = null;
+        private FrmQueryOddJobAndExportToExcel frmQueryOddJobAndExportToExcel = null;
+        private FrmImportQuantitiesOfOddJob frmImportQuantitiesOfOddJob = null;
         public FrmMainOfProductsCost()
         {
             InitializeComponent();
@@ -175,6 +171,26 @@ namespace Products_Cost
             }
             frmQueryTeamAndLine_Quantities.MdiParent = this;
             frmQueryTeamAndLine_Quantities.Show();
+        }
+
+        private void queryOddJobToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (frmQueryOddJobAndExportToExcel == null || frmQueryOddJobAndExportToExcel.IsDisposed)
+            {
+                frmQueryOddJobAndExportToExcel = new FrmQueryOddJobAndExportToExcel();
+            }
+            frmQueryOddJobAndExportToExcel.MdiParent = this;
+            frmQueryOddJobAndExportToExcel.Show();
+        }
+
+        private void importQuantitiesOfOddJob_Click(object sender, EventArgs e)
+        {
+            if (frmImportQuantitiesOfOddJob == null || frmImportQuantitiesOfOddJob.IsDisposed)
+            {
+                frmImportQuantitiesOfOddJob = new FrmImportQuantitiesOfOddJob();
+            }
+            frmImportQuantitiesOfOddJob.MdiParent = this;
+            frmImportQuantitiesOfOddJob.Show();
         }
     }
 }
