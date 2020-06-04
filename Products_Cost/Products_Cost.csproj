@@ -55,6 +55,10 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include=".Designer - 复制.cs">
+      <DependentUpon>FrmLineInfoConfig.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +143,9 @@
     <Compile Include="FrmShowProductsCost.Designer.cs">
       <DependentUpon>FrmShowProductsCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLineInfoConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helper\CheckProductsCostDoc.cs" />
     <Compile Include="Helper\Test.cs" />
     <Compile Include="ImplClass\CheckExcelImpl.cs" />
@@ -149,6 +156,7 @@
     <Compile Include="Interface\IDownloadTemplate.cs" />
     <Compile Include="Interface\IShowProductsCostSummary.cs" />
     <Compile Include="Interface\IShowProductsCostDetail.cs" />
+    <Compile Include="LineInfo.cs" />
     <Compile Include="Line_Each_One_Quantities.cs" />
     <Compile Include="NameAndRealTeam.cs" />
     <Compile Include="OddJob.cs" />
@@ -198,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShowProductsCost.resx">
       <DependentUpon>FrmShowProductsCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLineInfoConfig.resx">
+      <DependentUpon>FrmLineInfoConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

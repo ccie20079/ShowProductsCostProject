@@ -131,7 +131,7 @@ namespace Tools
                 return;
             }
             //2.判断该组,在某月，某线体，所作的某产品 在数据库中是否已经有记录？
-            System.Data.DataTable dt = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_month_team_report(pn, year_and_month_str, lineName, teamName);
+            System.Data.DataTable dt = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_team_pn_report(lineName, teamName, pn, year_and_month_str);
             if (dt.Rows.Count > 0) {
                 msg.Flag = false;
                 msg.Msg = string.Format(@"{0}: 线体(地点):{1},组名：{2},月份: {3}  已经存在！",pn,lineName,teamName,year_and_month_str);

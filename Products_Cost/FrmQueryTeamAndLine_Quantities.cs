@@ -56,7 +56,7 @@ namespace Products_Cost
         /// <param name="e"></param>
         private void cb_PN_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dgv.DataSource = Line_Each_One_Quantities.getAllQuantitiesOfTeam_PN(cb_Team_name.Text.Trim(), cb_PN.Text.Trim(), year_and_month_str);
+            this.dgv.DataSource = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_team_pn_report(null, this.cb_Team_name.Text.Trim(), this.cb_PN.Text.Trim(), year_and_month_str);
             DGVHelper.AutoSizeForDGV(dgv);
         }
 
@@ -65,7 +65,6 @@ namespace Products_Cost
             Line_Each_One_Quantities.deleteTheQuantities(cb_Team_name.Text.Trim(), cb_PN.Text.Trim(), year_and_month_str);
             this.cb_PN_SelectedIndexChanged(sender, e);
         }
-
         private void btnQuery_Click(object sender, EventArgs e)
         {
             this.cb_PN_SelectedIndexChanged(sender, e);

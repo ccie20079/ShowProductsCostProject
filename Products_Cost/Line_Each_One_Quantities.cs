@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Runtime.CompilerServices;
 using System.Text;
 using Tools;
 
@@ -24,6 +23,22 @@ namespace Products_Cost
         public string Products_name { get => _products_name; set => _products_name = value; }
         public string Summary_process { get => _summary_process; set => _summary_process = value; }
         public string Specific_process { get => _specific_process; set => _specific_process = value; }
+
+        /// <summary>
+        /// 判断该当前月份中是否存在相应的线体，若存在，暂时不可删除Line_Info中的线体名。
+        /// </summary>
+        /// <param name="line_name"></param>
+        /// <returns></returns>
+        internal static bool ifExistsTheLineNameOfTheCurrMonth(string line_name)
+        {
+            string sqlStr = string.Format(@"select 1 
+                                                    from Line_each_one_Quantities
+                                                    where line_name = '{0}'
+                                                    and trunc(year_and_month,'MM') = trunc(sysdate,'MM')",
+                                                    line_name);
+            return OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
+        }
+
         public string Emp_name { get => _emp_name; set => _emp_name = value; }
         public int Quantities { get => _quantities; set => _quantities = value; }
         public string Year_and_month_str { get => _year_and_month_str; set => _year_and_month_str = value; }
@@ -88,8 +103,7 @@ namespace Products_Cost
             }
             OracleDaoHelper.executeSQL(sBuilder.ToString());
         }
-
-        public static DataTable getAllQuantitiesOfTheLine_month_team_report(string pn, string year_and_month_str, string line_name, string team_name) {
+        public static System.Data.DataTable getAllQuantitiesOfTheLine_team_pn_report( string line_name, string team_name,string pn, string year_and_month_str) {
             string sqlStr = string.Format(@"select
                                                       rownum row_num, 
                                                       line_name, 
@@ -105,15 +119,24 @@ namespace Products_Cost
                                                         year_and_month, 
                                                         insert_time
                                                 from Line_Each_One_Quantities
-                                                where products_name = '{0}'
-                                                and trunc(year_and_month,'MM')= to_date('{1}','yyyy-MM')
-                                                and line_name = '{2}'
-                                                and team_name = '{3}'
-                                                order by line_name,
-                                                         nlssort(team_name,'nls_sort=SCHINESE_PINYIN_M'),
-                                                       nlssort(emp_name ,'nls_sort=SCHINESE_PINYIN_M'),
-                                                       seq asc", pn, year_and_month_str, line_name, team_name);
-            DataTable dt = OracleDaoHelper.getDTBySql(sqlStr);
+                                                where 1 = 1 ");
+            StringBuilder sBuilder = new StringBuilder(sqlStr);
+            if (!string.IsNullOrEmpty(line_name)) {
+                sBuilder.Append(string.Format(@" and line_name = '{0}' ",line_name));
+            }
+            if (!string.IsNullOrEmpty(team_name)) {
+                sBuilder.Append(string.Format(@" and team_name = '{0}' ", team_name));
+            }
+            if (!string.IsNullOrEmpty(pn))
+            {
+                sBuilder.Append(string.Format(@" and products_name = '{0}' ", pn));
+            }
+            if (!string.IsNullOrEmpty(year_and_month_str))
+            {
+                sBuilder.Append(string.Format(@" and trunc(year_and_month,'MM') = to_date('{0}','yyyy-MM') ", year_and_month_str));
+            }
+            sBuilder.Append(" order by seq asc");
+            System.Data.DataTable dt = OracleDaoHelper.getDTBySql(sBuilder.ToString());
             return dt;
         }
         public static DataTable getAllTeamName(string year_and_month_str) {
@@ -147,29 +170,6 @@ namespace Products_Cost
                                                 where g_seq = 1
                                                 order by seq asc", year_and_month_str, team_name);
             return OracleDaoHelper.getDTBySql(sqlStr);
-        }
-        public static DataTable getAllQuantitiesOfTeam_PN(string team_name,string pn, string year_and_month_str)
-        {
-            string sqlStr = string.Format(@"select
-                                                  row_number() over(order by seq asc) row_number,
-                                                  line_name, 
-                                                    products_name, 
-                                                    summary_process, 
-                                                    specific_process, 
-                                                    man_hour, 
-                                                    amount_of_money, 
-                                                    emp_name, 
-                                                    quantities,
-                                                     team_name,
-                                                     real_team_name,
-                                                    year_and_month, 
-                                                    insert_time
-                                            from Line_Each_One_Quantities
-                                            where team_name = '{0}'
-                                            and products_name = '{1}'
-                                            and trunc(year_and_month,'MM')= to_date('{2}','yyyy-MM')", team_name,pn, year_and_month_str);
-            DataTable dt = OracleDaoHelper.getDTBySql(sqlStr);
-            return dt;
         }
     }
 }

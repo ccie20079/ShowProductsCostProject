@@ -82,6 +82,7 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lineInfoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.cms.SuspendLayout();
             this.SuspendLayout();
@@ -357,7 +358,8 @@
             this.importEachOneQuatitiesOfMonthReportToolStripButton,
             this.queryQuantitiesOfTeamToolStripButton1,
             this.queryOddJobToolStripButton,
-            this.importQuantitiesOfOddJob});
+            this.importQuantitiesOfOddJob,
+            this.lineInfoToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1337, 36);
@@ -493,6 +495,17 @@
             this.showTemplateToolStripMenuItem.Text = "显示模板";
             this.showTemplateToolStripMenuItem.Click += new System.EventHandler(this.showTemplateToolStripMenuItem_Click);
             // 
+            // lineInfoToolStripButton
+            // 
+            this.lineInfoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.lineInfoToolStripButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lineInfoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("lineInfoToolStripButton.Image")));
+            this.lineInfoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.lineInfoToolStripButton.Name = "lineInfoToolStripButton";
+            this.lineInfoToolStripButton.Size = new System.Drawing.Size(76, 33);
+            this.lineInfoToolStripButton.Text = "线体设置";
+            this.lineInfoToolStripButton.Click += new System.EventHandler(this.lineInfoToolStripButton_Click);
+            // 
             // FrmMainOfProductsCost
             // 
             this.ClientSize = new System.Drawing.Size(1337, 685);
@@ -569,6 +582,7 @@
         private System.Windows.Forms.ToolStripButton queryQuantitiesOfTeamToolStripButton1;
         private System.Windows.Forms.ToolStripButton importQuantitiesOfOddJob;
         private System.Windows.Forms.ToolStripButton queryOddJobToolStripButton;
+        private System.Windows.Forms.ToolStripButton lineInfoToolStripButton;
         #endregion
 
         /*

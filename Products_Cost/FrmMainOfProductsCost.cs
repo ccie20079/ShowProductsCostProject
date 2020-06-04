@@ -36,6 +36,7 @@ namespace Products_Cost
         private FrmQueryTeamAndLine_Quantities frmQueryTeamAndLine_Quantities = null;
         private FrmQueryOddJobAndExportToExcel frmQueryOddJobAndExportToExcel = null;
         private FrmImportQuantitiesOfOddJob frmImportQuantitiesOfOddJob = null;
+        private FrmLineInfoConfig frmLineInfoConfig = null;
         public FrmMainOfProductsCost()
         {
             InitializeComponent();
@@ -191,6 +192,16 @@ namespace Products_Cost
             }
             frmImportQuantitiesOfOddJob.MdiParent = this;
             frmImportQuantitiesOfOddJob.Show();
+        }
+
+        private void lineInfoToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (frmLineInfoConfig == null || frmLineInfoConfig.IsDisposed)
+            {
+                frmLineInfoConfig = new FrmLineInfoConfig();
+            }
+            frmLineInfoConfig.MdiParent = this;
+            frmLineInfoConfig.Show();
         }
     }
 }
