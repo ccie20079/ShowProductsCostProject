@@ -8,7 +8,6 @@ namespace Products_Cost
 {
     class Line_Each_One_Quantities
     {
-        private const string _report_category = "月报表";    //标识月报表
 
         private string _line_name;
         private string _team_name;
@@ -20,7 +19,7 @@ namespace Products_Cost
         private int _quantities;
         private int _man_hour;
         private decimal _amount_of_money;
-        private String _year_and_month_str;
+        private String _year_month_day_str;
 
         public string Line_Name { get => _line_name; set => _line_name = value; }
         public string Products_name { get => _products_name; set => _products_name = value; }
@@ -37,7 +36,7 @@ namespace Products_Cost
             string sqlStr = string.Format(@"select 1 
                                                     from Line_each_one_Quantities
                                                     where line_name = '{0}'
-                                                    and trunc(year_and_month,'MM') = trunc(sysdate,'MM')",
+                                                    and trunc(year_month_day,'MM') = trunc(sysdate,'MM')",
                                                     line_name);
             return OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
         }
@@ -47,18 +46,18 @@ namespace Products_Cost
             string sqlStr = string.Format(@"select 1 
                                                     from Line_each_one_Quantities
                                                     where team_name = '{0}'
-                                                    and trunc(year_and_month,'MM') = trunc(sysdate,'MM')",
+                                                    and trunc(year_month_day,'MM') = trunc(sysdate,'MM')",
                                                     team_name);
             return OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
         }
 
         public string Emp_name { get => _emp_name; set => _emp_name = value; }
         public int Quantities { get => _quantities; set => _quantities = value; }
-        public string Year_and_month_str { get => _year_and_month_str; set => _year_and_month_str = value; }
         public int Man_hour { get => _man_hour; set => _man_hour = value; }
         public decimal Amount_of_money { get => _amount_of_money; set => _amount_of_money = value; }
         public string Team_name { get => _team_name; set => _team_name = value; }
         public string Real_team_name { get => _real_team_name; set => _real_team_name = value; }
+        public string Year_month_day_str { get => _year_month_day_str; set => _year_month_day_str = value; }
 
         public int save() {
             string sqlStr = string.Format(@"insert into line_each_one_quantities (
@@ -72,8 +71,7 @@ namespace Products_Cost
                                                           amount_of_money,
                                                           emp_name, 
                                                           quantities, 
-                                                          year_and_month,
-                                                          report_category
+                                                          year_month_day
                                                   )
                                                   values(
                                                           '{0}',
@@ -86,8 +84,7 @@ namespace Products_Cost
                                                             {7},
                                                           '{8}',
                                                           {9},
-                                                          to_date('{10}','yyyy-MM'),
-                                                            '{11}'    ---记录标识: 月产量,日产量
+                                                          trunc(last_day(to_date('{10}','yyyy-MM')))
                                                   )", this._line_name,
                                                   _team_name,
                                                   _real_team_name,
@@ -98,8 +95,8 @@ namespace Products_Cost
                                                   _amount_of_money,
                                                   _emp_name,
                                                   _quantities,
-                                                  _year_and_month_str,
-                                                  _report_category);
+                                                  _year_month_day_str
+                                                  );
             return OracleDaoHelper.executeSQL(sqlStr);
         }
         /// <summary>
@@ -112,9 +109,8 @@ namespace Products_Cost
         {
             StringBuilder sBuilder = new StringBuilder(string.Format(@"delete 
                                                                         from Line_Each_One_Quantities 
-                                                                        where trunc(year_and_month,'MM') = to_date('{0}','yyyy-MM') 
-                                                                        and report_category = '{1}' 
-                                                            ",year_and_month_str, _report_category));
+                                                                        where trunc(year_month_day,'MM') = to_date('{0}','yyyy-MM')    
+                                                            ",year_and_month_str));
             if (!string.IsNullOrEmpty(team_name)) {
                 sBuilder.Append(string.Format(@" and team_name = '{0}'", team_name));
             }
@@ -136,10 +132,10 @@ namespace Products_Cost
                                                         quantities,
                                                          team_name,
                                                          real_team_name,
-                                                        year_and_month, 
+                                                        year_month_day, 
                                                         insert_time
                                                 from Line_Each_One_Quantities
-                                                where report_category = '{0}' ", _report_category);
+                                                where 1=1 ");
             StringBuilder sBuilder = new StringBuilder(sqlStr);
             if (!string.IsNullOrEmpty(line_name)) {
                 sBuilder.Append(string.Format(@" and line_name = '{0}' ",line_name));
@@ -153,7 +149,7 @@ namespace Products_Cost
             }
             if (!string.IsNullOrEmpty(year_and_month_str))
             {
-                sBuilder.Append(string.Format(@" and trunc(year_and_month,'MM') = to_date('{0}','yyyy-MM') ", year_and_month_str));
+                sBuilder.Append(string.Format(@" and trunc(year_month_day,'MM') = to_date('{0}','yyyy-MM') ", year_and_month_str));
             }
             sBuilder.Append(" order by seq asc");
             System.Data.DataTable dt = OracleDaoHelper.getDTBySql(sBuilder.ToString());
@@ -168,12 +164,10 @@ namespace Products_Cost
                                                                                         team_name,
                                                                                         seq
                                                       from Line_Each_One_Quantities
-                                                      where report_category ='{0}'
-                                                        and trunc(year_and_month,'MM')= to_date('{1}','yyyy-MM')
+                                                      where trunc(year_month_day,'MM')= to_date('{0}','yyyy-MM')
                                                 ) temp 
                                                 where g_seq = 1
                                                 order by seq asc",
-                                                _report_category,
                                                 year_and_month_str);
             return OracleDaoHelper.getDTBySql(sqlStr);
         }
@@ -187,12 +181,11 @@ namespace Products_Cost
                                                                                         products_name,
                                                                                         seq
                                                       from Line_Each_One_Quantities
-                                                      where  report_category ='{0}'
-                                                    and trunc(year_and_month,'MM')= to_date('{1}','yyyy-MM')
-                                                      and team_name = '{2}'
+                                                      where trunc(year_month_day,'MM')= to_date('{0}','yyyy-MM')
+                                                      and team_name = '{1}'
                                                 ) temp 
                                                 where g_seq = 1
-                                                order by seq asc", _report_category,year_and_month_str, team_name);
+                                                order by seq asc",year_and_month_str, team_name);
             return OracleDaoHelper.getDTBySql(sqlStr);
         }
     }
