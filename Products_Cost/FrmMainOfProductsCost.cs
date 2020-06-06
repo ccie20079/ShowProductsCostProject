@@ -33,7 +33,7 @@ namespace Products_Cost
         private FrmDLProductsRecordTemplate frmDLProductsRecordTemplate = null;
         private FrmSameProcessExport frmSameProcessExport = null;
         private FrmImportEachOneQuantitiesOfTheLine frmImportEachOneQuantitiesOfTheLine = null;
-        private FrmQueryTeamAndLine_Quantities frmQueryTeamAndLine_Quantities = null;
+        private FrmQueryTeamAndLine_Quantities_MonthRecord frmQueryTeamAndLine_Quantities = null;
         private FrmQueryOddJobAndExportToExcel frmQueryOddJobAndExportToExcel = null;
         private FrmImportQuantitiesOfOddJob frmImportQuantitiesOfOddJob = null;
         private FrmLineInfoConfig frmLineInfoConfig = null;
@@ -169,7 +169,7 @@ namespace Products_Cost
         {
             if (frmQueryTeamAndLine_Quantities == null || frmQueryTeamAndLine_Quantities.IsDisposed)
             {
-                frmQueryTeamAndLine_Quantities = new FrmQueryTeamAndLine_Quantities();
+                frmQueryTeamAndLine_Quantities = new FrmQueryTeamAndLine_Quantities_MonthRecord();
             }
             frmQueryTeamAndLine_Quantities.MdiParent = this;
             frmQueryTeamAndLine_Quantities.Show();

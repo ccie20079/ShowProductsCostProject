@@ -12,10 +12,10 @@ using Tools;
 
 namespace Products_Cost
 {
-    public partial class FrmQueryTeamAndLine_Quantities : Form
+    public partial class FrmQueryTeamAndLine_Quantities_MonthRecord : Form
     {
         string year_and_month_str = string.Empty;
-        public FrmQueryTeamAndLine_Quantities()
+        public FrmQueryTeamAndLine_Quantities_MonthRecord()
         {
             InitializeComponent();
         }

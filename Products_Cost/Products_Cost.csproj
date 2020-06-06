@@ -97,11 +97,11 @@
     <Compile Include="FrmQueryOddJobAndExportToExcel.Designer.cs">
       <DependentUpon>FrmQueryOddJobAndExportToExcel.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQueryTeamAndLine_Quantities.cs">
+    <Compile Include="FrmQueryTeamAndLine_Quantities_MonthRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmQueryTeamAndLine_Quantities.Designer.cs">
-      <DependentUpon>FrmQueryTeamAndLine_Quantities.cs</DependentUpon>
+    <Compile Include="FrmQueryTeamAndLine_Quantities_MonthRecord.Designer.cs">
+      <DependentUpon>FrmQueryTeamAndLine_Quantities_MonthRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSameProcessExport.cs">
       <SubType>Form</SubType>
@@ -191,8 +191,8 @@
     <EmbeddedResource Include="FrmQueryOddJobAndExportToExcel.resx">
       <DependentUpon>FrmQueryOddJobAndExportToExcel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQueryTeamAndLine_Quantities.resx">
-      <DependentUpon>FrmQueryTeamAndLine_Quantities.cs</DependentUpon>
+    <EmbeddedResource Include="FrmQueryTeamAndLine_Quantities_MonthRecord.resx">
+      <DependentUpon>FrmQueryTeamAndLine_Quantities_MonthRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSameProcessExport.resx">
       <DependentUpon>FrmSameProcessExport.cs</DependentUpon>

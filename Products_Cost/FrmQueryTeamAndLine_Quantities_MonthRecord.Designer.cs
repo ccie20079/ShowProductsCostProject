@@ -1,6 +1,6 @@
 ﻿namespace Products_Cost
 {
-    partial class FrmQueryTeamAndLine_Quantities
+    partial class FrmQueryTeamAndLine_Quantities_MonthRecord
     {
         /// <summary>
         /// Required designer variable.
