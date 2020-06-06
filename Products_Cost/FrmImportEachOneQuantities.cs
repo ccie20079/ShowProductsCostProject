@@ -130,6 +130,13 @@ namespace Tools
                 myExcel.close();
                 return;
             }
+            //2.判断线体，组名是否存在
+            msg = isValid_TheLineName_Or_TheTeamName(teamName, lineName);
+            if (!msg.Flag) {
+                this.readDataToDB_bgWorker.ReportProgress(0, msg);
+                myExcel.close();
+                return;
+            }
             //2.判断该组,在某月，某线体，所作的某产品 在数据库中是否已经有记录？
             System.Data.DataTable dt = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_team_pn_report(lineName, teamName, pn, year_and_month_str);
             if (dt.Rows.Count > 0) {
@@ -231,6 +238,21 @@ namespace Tools
             readDataToDB_bgWorker.ReportProgress((count * 100 / maxmium),msg);
             myExcel.close();
         }
+
+        private MSG isValid_TheLineName_Or_TheTeamName(string teamName, string lineName)
+        {
+            string sqlStr = string.Format(@"SELECT 1 FROM Line_Info where line_name = '{0}'", lineName);
+            MSG msg = new MSG();
+            msg.Flag = OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
+            msg.Msg = msg.Flag ? "" :"此线体名： " + lineName + " 在Line_Info表中不存在";
+            if (!msg.Flag) return msg;
+            //线体检查通过
+            sqlStr = string.Format(@"SELECT 1 FROM Team_Info where team_name = '{0}'", teamName);
+            msg.Flag = OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
+            msg.Msg = msg.Flag ? "" : "此班组名： " + teamName + " 在team_name表中不存在";
+            return msg;
+        }
+
         private MSG checkValidityOfAllNameOfLine_Yields_Report(out List<NameAndRealTeam> nameAndTeamList)
         {
             MSG msg = new MSG();

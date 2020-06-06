@@ -79,10 +79,11 @@
             this.queryQuantitiesOfTeamToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.queryOddJobToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.importQuantitiesOfOddJob = new System.Windows.Forms.ToolStripButton();
+            this.lineInfoCnfigToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lineInfoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.teamInfoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip.SuspendLayout();
             this.cms.SuspendLayout();
             this.SuspendLayout();
@@ -359,7 +360,8 @@
             this.queryQuantitiesOfTeamToolStripButton1,
             this.queryOddJobToolStripButton,
             this.importQuantitiesOfOddJob,
-            this.lineInfoToolStripButton});
+            this.lineInfoCnfigToolStripButton,
+            this.teamInfoToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1337, 36);
@@ -474,6 +476,17 @@
             this.importQuantitiesOfOddJob.Text = "导入零活记录";
             this.importQuantitiesOfOddJob.Click += new System.EventHandler(this.importQuantitiesOfOddJob_Click);
             // 
+            // lineInfoCnfigToolStripButton
+            // 
+            this.lineInfoCnfigToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.lineInfoCnfigToolStripButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lineInfoCnfigToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("lineInfoCnfigToolStripButton.Image")));
+            this.lineInfoCnfigToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.lineInfoCnfigToolStripButton.Name = "lineInfoCnfigToolStripButton";
+            this.lineInfoCnfigToolStripButton.Size = new System.Drawing.Size(76, 33);
+            this.lineInfoCnfigToolStripButton.Text = "线体设置";
+            this.lineInfoCnfigToolStripButton.Click += new System.EventHandler(this.lineInfoToolStripButton_Click);
+            // 
             // notifyIcon
             // 
             this.notifyIcon.ContextMenuStrip = this.cms;
@@ -495,16 +508,16 @@
             this.showTemplateToolStripMenuItem.Text = "显示模板";
             this.showTemplateToolStripMenuItem.Click += new System.EventHandler(this.showTemplateToolStripMenuItem_Click);
             // 
-            // lineInfoToolStripButton
+            // teamInfoToolStripButton
             // 
-            this.lineInfoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lineInfoToolStripButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lineInfoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("lineInfoToolStripButton.Image")));
-            this.lineInfoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.lineInfoToolStripButton.Name = "lineInfoToolStripButton";
-            this.lineInfoToolStripButton.Size = new System.Drawing.Size(76, 33);
-            this.lineInfoToolStripButton.Text = "线体设置";
-            this.lineInfoToolStripButton.Click += new System.EventHandler(this.lineInfoToolStripButton_Click);
+            this.teamInfoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.teamInfoToolStripButton.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.teamInfoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("teamInfoToolStripButton.Image")));
+            this.teamInfoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.teamInfoToolStripButton.Name = "teamInfoToolStripButton";
+            this.teamInfoToolStripButton.Size = new System.Drawing.Size(76, 33);
+            this.teamInfoToolStripButton.Text = "小组设置";
+            this.teamInfoToolStripButton.Click += new System.EventHandler(this.teamInfoToolStripButton_Click);
             // 
             // FrmMainOfProductsCost
             // 
@@ -582,7 +595,8 @@
         private System.Windows.Forms.ToolStripButton queryQuantitiesOfTeamToolStripButton1;
         private System.Windows.Forms.ToolStripButton importQuantitiesOfOddJob;
         private System.Windows.Forms.ToolStripButton queryOddJobToolStripButton;
-        private System.Windows.Forms.ToolStripButton lineInfoToolStripButton;
+        private System.Windows.Forms.ToolStripButton lineInfoCnfigToolStripButton;
+        private System.Windows.Forms.ToolStripButton teamInfoToolStripButton;
         #endregion
 
         /*

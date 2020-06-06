@@ -39,6 +39,16 @@ namespace Products_Cost
             return OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
         }
 
+        internal static bool ifExistsTheTeamNameOfTheCurrMonth(string team_name)
+        {
+            string sqlStr = string.Format(@"select 1 
+                                                    from Line_each_one_Quantities
+                                                    where team_name = '{0}'
+                                                    and trunc(year_and_month,'MM') = trunc(sysdate,'MM')",
+                                                    team_name);
+            return OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
+        }
+
         public string Emp_name { get => _emp_name; set => _emp_name = value; }
         public int Quantities { get => _quantities; set => _quantities = value; }
         public string Year_and_month_str { get => _year_and_month_str; set => _year_and_month_str = value; }

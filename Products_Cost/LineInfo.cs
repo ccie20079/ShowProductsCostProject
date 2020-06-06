@@ -8,20 +8,23 @@ namespace Products_Cost
     public class LineInfo
     {
         private string _line_name;
+        private string _monitor;
 
-        public LineInfo(string line_name)
+        public LineInfo(string line_name,string monitor)
         {
             Line_name = line_name;
+            this._monitor = monitor;
         }
 
         public string Line_name { get => _line_name; set => _line_name = value; }
+        public string Monitor { get => _monitor; set => _monitor = value; }
 
         public static bool ifExistsTheLine(string line_name) {
             string sqlStr = string.Format(@"SELECT 1 FROM Line_Info where line_name = '{0}'", line_name);
             return OracleDaoHelper.getDTBySql(sqlStr).Rows.Count > 0 ? true : false;
         }
         public int add() {
-            string sqlStr = string.Format(@"INSERT INTO Line_Info(Line_Name)values('{0}')", _line_name);
+            string sqlStr = string.Format(@"INSERT INTO Line_Info(Line_Name,monitor)values('{0}','{1}')", _line_name,_monitor);
             return OracleDaoHelper.executeSQL(sqlStr);
         }
         public static int delete(string line_name) {
@@ -34,7 +37,7 @@ namespace Products_Cost
             return OracleDaoHelper.executeSQL(sqlStr);
         }
         public static DataTable getAllLineInfo() {
-            string sqlStr = string.Format(@"SELECT Line_Name,create_time FROM Line_Info order by create_time desc");
+            string sqlStr = string.Format(@"SELECT Line_Name,monitor,create_time FROM Line_Info order by create_time desc");
             return OracleDaoHelper.getDTBySql(sqlStr);
         }
     }

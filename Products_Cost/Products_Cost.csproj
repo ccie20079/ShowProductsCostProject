@@ -55,10 +55,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include=".Designer - 复制.cs">
-      <DependentUpon>FrmLineInfoConfig.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +84,12 @@
     </Compile>
     <Compile Include="FrmImportPictureOfProduct.Designer.cs">
       <DependentUpon>FrmImportPictureOfProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLineInfoConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLineInfoConfig.Designer.cs">
+      <DependentUpon>FrmLineInfoConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmQueryOddJobAndExportToExcel.cs">
       <SubType>Form</SubType>
@@ -143,8 +145,11 @@
     <Compile Include="FrmShowProductsCost.Designer.cs">
       <DependentUpon>FrmShowProductsCost.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLineInfoConfig.cs">
+    <Compile Include="FrmTeamInfoConfig.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTeamInfoConfig.Designer.cs">
+      <DependentUpon>FrmTeamInfoConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\CheckProductsCostDoc.cs" />
     <Compile Include="Helper\Test.cs" />
@@ -156,6 +161,7 @@
     <Compile Include="Interface\IDownloadTemplate.cs" />
     <Compile Include="Interface\IShowProductsCostSummary.cs" />
     <Compile Include="Interface\IShowProductsCostDetail.cs" />
+    <Compile Include="Team_Info.cs" />
     <Compile Include="LineInfo.cs" />
     <Compile Include="Line_Each_One_Quantities.cs" />
     <Compile Include="NameAndRealTeam.cs" />
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImportPictureOfProduct.resx">
       <DependentUpon>FrmImportPictureOfProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLineInfoConfig.resx">
+      <DependentUpon>FrmLineInfoConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQueryOddJobAndExportToExcel.resx">
       <DependentUpon>FrmQueryOddJobAndExportToExcel.cs</DependentUpon>
@@ -207,8 +216,8 @@
     <EmbeddedResource Include="FrmShowProductsCost.resx">
       <DependentUpon>FrmShowProductsCost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLineInfoConfig.resx">
-      <DependentUpon>FrmLineInfoConfig.cs</DependentUpon>
+    <EmbeddedResource Include="FrmTeamInfoConfig.resx">
+      <DependentUpon>FrmTeamInfoConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

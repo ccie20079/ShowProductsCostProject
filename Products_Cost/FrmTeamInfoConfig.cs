@@ -1,16 +1,13 @@
-﻿using Microsoft.Office.Interop.Excel;
-using System;
-using System.Data;
-using System.Windows.Forms;
+﻿using System;
 using Tools;
+using System.Windows.Forms;
 
 namespace Products_Cost
 {
-    public partial class FrmLineInfoConfig : Form
+    public partial class FrmTeamInfoConfig : Form
     {
-         public static string _action ="admin";
-   
-        public FrmLineInfoConfig()
+        public static string _action = "admin";
+        public FrmTeamInfoConfig()
         {
             InitializeComponent();
         }
@@ -23,9 +20,9 @@ namespace Products_Cost
         {
             DataGridViewRow dr = dgv.CurrentRow;
             if (dr == null) return;
-            string line_name = dr.Cells["Line_Name"].Value.ToString();
-            LineInfo.delete(line_name);
-            this.dgv.DataSource = LineInfo.getAllLineInfo();
+            string team_name = dr.Cells["team_name"].Value.ToString();
+            Team_Info.delete(team_name);
+            this.dgv.DataSource = Team_Info.getAllTeamInfo();
             DGVHelper.AutoSizeForDGV(dgv);
         }
 
@@ -38,47 +35,36 @@ namespace Products_Cost
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string line_name = tbLineName.Text.Trim();
+            string team_name = tbTeam_name.Text.Trim();
             string monitor = tbMonitor.Text.Trim();
-            if (string.IsNullOrEmpty(line_name)) return;
+            if (string.IsNullOrEmpty(team_name)) return;
             //判断是否已经存在
-            if (LineInfo.ifExistsTheLine(line_name)) {
+            if (Team_Info.ifExistsTheTeam(team_name))
+            {
                 ShowResult.show(lblResult, "此线体已存在！", false);
                 timerRestoreTheLblResult.Start();
                 return;
             }
-            LineInfo lineInfo = new LineInfo(line_name, monitor);
-            lineInfo.add();
+            Team_Info team_Info = new Team_Info(team_name, monitor);
+            team_Info.add();
             //重新获取线体信息
-            this.dgv.DataSource = LineInfo.getAllLineInfo();
+            this.dgv.DataSource = Team_Info.getAllTeamInfo();
             DGVHelper.AutoSizeForDGV(dgv);
         }
 
-        private void FrmLineInfoConfig_Load(object sender, EventArgs e)
+        private void FrmTeamInfoConfig_Load(object sender, EventArgs e)
         {
-            this.dgv.DataSource = LineInfo.getAllLineInfo();
+            this.dgv.DataSource = Team_Info.getAllTeamInfo();
             DGVHelper.AutoSizeForDGV(dgv);
         }
 
-        private void tbLineName_KeyPress(object sender, KeyPressEventArgs e)
+        private void tbTeam_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != 13) return;
             btnAdd_Click(sender, e);
         }
 
-        private void tbLineName_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lblLineName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbMonitor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
