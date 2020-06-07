@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_Team_Name = new System.Windows.Forms.Label();
-            this.cb_Team_name = new System.Windows.Forms.ComboBox();
+            this.cb_report_team_name = new System.Windows.Forms.ComboBox();
             this.mCalendar = new System.Windows.Forms.MonthCalendar();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.cms = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -53,15 +53,15 @@
             this.lbl_Team_Name.TabIndex = 16;
             this.lbl_Team_Name.Text = "组编号:";
             // 
-            // cb_Team_name
+            // cb_report_team_name
             // 
-            this.cb_Team_name.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cb_Team_name.FormattingEnabled = true;
-            this.cb_Team_name.Location = new System.Drawing.Point(391, 223);
-            this.cb_Team_name.Name = "cb_Team_name";
-            this.cb_Team_name.Size = new System.Drawing.Size(136, 27);
-            this.cb_Team_name.TabIndex = 15;
-            this.cb_Team_name.SelectedIndexChanged += new System.EventHandler(this.cb_Team_name_SelectedIndexChanged);
+            this.cb_report_team_name.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cb_report_team_name.FormattingEnabled = true;
+            this.cb_report_team_name.Location = new System.Drawing.Point(391, 223);
+            this.cb_report_team_name.Name = "cb_report_team_name";
+            this.cb_report_team_name.Size = new System.Drawing.Size(136, 27);
+            this.cb_report_team_name.TabIndex = 15;
+            this.cb_report_team_name.SelectedIndexChanged += new System.EventHandler(this.cb_report_team_name_SelectedIndexChanged);
             // 
             // mCalendar
             // 
@@ -88,7 +88,7 @@
             this.ExportToExcelToolStripMenuItem,
             this.delToolStripMenuItem});
             this.cms.Name = "cms";
-            this.cms.Size = new System.Drawing.Size(225, 70);
+            this.cms.Size = new System.Drawing.Size(225, 48);
             // 
             // ExportToExcelToolStripMenuItem
             // 
@@ -137,7 +137,7 @@
             this.btnQuery.UseVisualStyleBackColor = false;
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
-            // FrmQueryTeamAndLine_Quantities
+            // FrmQueryTeamAndLine_Quantities_MonthRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,9 +148,9 @@
             this.Controls.Add(this.lblPN);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.lbl_Team_Name);
-            this.Controls.Add(this.cb_Team_name);
+            this.Controls.Add(this.cb_report_team_name);
             this.Controls.Add(this.mCalendar);
-            this.Name = "FrmQueryTeamAndLine_Quantities";
+            this.Name = "FrmQueryTeamAndLine_Quantities_MonthRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "组产量查询";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -163,7 +163,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_Team_Name;
-        private System.Windows.Forms.ComboBox cb_Team_name;
+        private System.Windows.Forms.ComboBox cb_report_team_name;
         private System.Windows.Forms.MonthCalendar mCalendar;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label lblPN;

@@ -27,8 +27,12 @@ namespace Products_Cost
             string sqlStr = string.Format(@"INSERT INTO Team_Info(team_name,monitor)values('{0}','{1}')", _team_name,_monitor);
             return OracleDaoHelper.executeSQL(sqlStr);
         }
+        /// <summary>
+        /// 判断当月产量记录中是否存在该组。
+        /// </summary>
+        /// <param name="team_name"></param>
+        /// <returns></returns>
         public static int delete(string team_name) {
-            //先判断本月 产量Line_each_one_quantities 中是否已有该线体
             if (Line_Each_One_Quantities.ifExistsTheTeamNameOfTheCurrMonth(team_name)) {
                 MessageBox.Show("当前月份产量记录表中存在该线体，暂不能删除！", "提示！", MessageBoxButton.OK, MessageBoxImage.Information);
                 return 0;

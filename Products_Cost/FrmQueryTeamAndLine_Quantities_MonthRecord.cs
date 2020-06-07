@@ -25,23 +25,23 @@ namespace Products_Cost
             year_and_month_str = e.Start.ToString("yyyy-MM");
             //显示该日期下所有的组
             DataTable dt = Line_Each_One_Quantities.getAllTeamName(year_and_month_str);
-            this.cb_Team_name.DataSource = null;
+            this.cb_report_team_name.DataSource = null;
             this.cb_PN.DataSource = null;
-            this.cb_Team_name.SelectedIndexChanged -= new System.EventHandler(this.cb_Team_name_SelectedIndexChanged);
-            this.cb_Team_name.DataSource = dt;
-            this.cb_Team_name.DisplayMember = "team_name";
-            this.cb_Team_name.ValueMember = "team_name";
-            this.cb_Team_name.SelectedIndexChanged += new System.EventHandler(this.cb_Team_name_SelectedIndexChanged);
+            this.cb_report_team_name.SelectedIndexChanged -= new System.EventHandler(this.cb_report_team_name_SelectedIndexChanged);
+            this.cb_report_team_name.DataSource = dt;
+            this.cb_report_team_name.DisplayMember = "report_team_name";
+            this.cb_report_team_name.ValueMember = "report_team_name";
+            this.cb_report_team_name.SelectedIndexChanged += new System.EventHandler(this.cb_report_team_name_SelectedIndexChanged);
         }
         /// <summary>
         /// 选定组名后，可以产生产品名
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cb_Team_name_SelectedIndexChanged(object sender, EventArgs e)
+        private void cb_report_team_name_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            DataTable dt = Line_Each_One_Quantities.getAllProductsNameOfTeam(year_and_month_str, this.cb_Team_name.Text.Trim());
+            DataTable dt = Line_Each_One_Quantities.getAllProductsNameOfTeam(year_and_month_str, this.cb_report_team_name.Text.Trim());
             this.cb_PN.DataSource = null;
             this.cb_PN.SelectedIndexChanged-= new System.EventHandler(this.cb_PN_SelectedIndexChanged);
             this.cb_PN.DataSource = dt;
@@ -56,13 +56,13 @@ namespace Products_Cost
         /// <param name="e"></param>
         private void cb_PN_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dgv.DataSource = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_team_pn_report(null, this.cb_Team_name.Text.Trim(), this.cb_PN.Text.Trim(), year_and_month_str);
+            this.dgv.DataSource = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_team_pn_report(null, this.cb_report_team_name.Text.Trim(), this.cb_PN.Text.Trim(), year_and_month_str);
             DGVHelper.AutoSizeForDGV(dgv);
         }
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Line_Each_One_Quantities.deleteTheQuantities(cb_Team_name.Text.Trim(), cb_PN.Text.Trim(), year_and_month_str);
+            Line_Each_One_Quantities.deleteTheQuantities(cb_report_team_name.Text.Trim(), cb_PN.Text.Trim(), year_and_month_str);
             this.cb_PN_SelectedIndexChanged(sender, e);
         }
         private void btnQuery_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace Products_Cost
         private void ExportToExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string filePath = string.Format(@"{0}\班组产量\{1}_{2}_{3}月_{4}.xls", Application.StartupPath,
-                                                                        string.IsNullOrEmpty(cb_Team_name.Text.Trim())?"所有组": cb_Team_name.Text.Trim(),
+                                                                        string.IsNullOrEmpty(cb_report_team_name.Text.Trim())?"所有组": cb_report_team_name.Text.Trim(),
                                                                             string.IsNullOrEmpty(cb_PN.Text.Trim())?"所有产品":cb_PN.Text.Trim(),
                                                                             int.Parse(year_and_month_str.Substring(5,2)),
                                                                             TimeHelper.getCurrentTimeStr());

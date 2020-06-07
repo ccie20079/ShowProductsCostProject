@@ -39,7 +39,7 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("宋体", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblUserName.Location = new System.Drawing.Point(74, 98);
+            this.lblUserName.Location = new System.Drawing.Point(64, 79);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(112, 25);
             this.lblUserName.TabIndex = 0;
@@ -50,19 +50,19 @@
             this.tbUserName.AutoCompleteCustomSource.AddRange(new string[] {
             "董魁"});
             this.tbUserName.Font = new System.Drawing.Font("宋体", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbUserName.Location = new System.Drawing.Point(219, 91);
+            this.tbUserName.Location = new System.Drawing.Point(182, 76);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(341, 36);
+            this.tbUserName.Size = new System.Drawing.Size(269, 36);
             this.tbUserName.TabIndex = 1;
             this.tbUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUserName_KeyPress);
             // 
             // tbPwd
             // 
             this.tbPwd.Font = new System.Drawing.Font("宋体", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbPwd.Location = new System.Drawing.Point(219, 207);
+            this.tbPwd.Location = new System.Drawing.Point(182, 185);
             this.tbPwd.Name = "tbPwd";
             this.tbPwd.PasswordChar = '*';
-            this.tbPwd.Size = new System.Drawing.Size(341, 36);
+            this.tbPwd.Size = new System.Drawing.Size(269, 36);
             this.tbPwd.TabIndex = 3;
             this.tbPwd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPwd_KeyPress);
             // 
@@ -70,7 +70,7 @@
             // 
             this.lblPwd.AutoSize = true;
             this.lblPwd.Font = new System.Drawing.Font("宋体", 18.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblPwd.Location = new System.Drawing.Point(73, 215);
+            this.lblPwd.Location = new System.Drawing.Point(63, 196);
             this.lblPwd.Name = "lblPwd";
             this.lblPwd.Size = new System.Drawing.Size(113, 25);
             this.lblPwd.TabIndex = 2;
@@ -81,7 +81,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(721, 363);
+            this.ClientSize = new System.Drawing.Size(570, 284);
             this.Controls.Add(this.tbPwd);
             this.Controls.Add(this.lblPwd);
             this.Controls.Add(this.tbUserName);

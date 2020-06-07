@@ -117,11 +117,12 @@ namespace Tools
             this.validMaxColIndex= uEHelper.getColIndexOfSpecificContentInSpecificRow(2,1,uEHelper.getMaxColIndex(),"终止标识")-1;
             //获取最大行从第三行起为序号行,当第1列，第一次出现为空的行时，即最大行。
             this.validMaxRowIndex = uEHelper.getMaxRowIndexBeforeBlankCell(1);
-            string pn, year_and_month_str, lineName, teamName;
+            //********定义局部变量******
+            string pn, report_year_month_str, lineName, reportTeamName;
             //判断是否已经存在该线体的月报表
             string contentOfA1 = uEHelper.getCellContentByRowAndColIndex(1, 1);
             //1.判断产品名_组_月份格式是否正确。
-            bool flag = StringHelper.checkPN_Team_Month(contentOfA1, out pn, out year_and_month_str, out lineName, out teamName);
+            bool flag = StringHelper.checkPN_Team_Month(contentOfA1, out pn, out report_year_month_str, out lineName, out reportTeamName);
             if (!flag)
             {
                 msg.Flag = false;
@@ -131,17 +132,17 @@ namespace Tools
                 return;
             }
             //2.判断线体，组名是否存在
-            msg = isValid_TheLineName_Or_TheTeamName(teamName, lineName);
+            msg = isValid_TheLineName_Or_TheTeamName(reportTeamName, lineName);
             if (!msg.Flag) {
                 this.readDataToDB_bgWorker.ReportProgress(0, msg);
                 myExcel.close();
                 return;
             }
             //2.判断该组,在某月，某线体，所作的某产品 在数据库中是否已经有记录？
-            System.Data.DataTable dt = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_team_pn_report(lineName, teamName, pn, year_and_month_str);
+            System.Data.DataTable dt = Line_Each_One_Quantities.getAllQuantitiesOfTheLine_team_pn_report(lineName, reportTeamName, pn, report_year_month_str);
             if (dt.Rows.Count > 0) {
                 msg.Flag = false;
-                msg.Msg = string.Format(@"{0}: 线体(地点):{1},组名：{2},月份: {3}  已经存在！",pn,lineName,teamName,year_and_month_str);
+                msg.Msg = string.Format(@"{0}: 线体(地点):{1},组名：{2},月份: {3}  已经存在！",pn,lineName, reportTeamName, report_year_month_str);
                 this.readDataToDB_bgWorker.ReportProgress(0, msg);
                 myExcel.close();
                 return;
@@ -199,9 +200,9 @@ namespace Tools
                     //判断是否为整数
                     Line_Each_One_Quantities each_One_Quantities = new Line_Each_One_Quantities();
                     each_One_Quantities.Line_Name = lineName;
-                    each_One_Quantities.Team_name = teamName;
+                    each_One_Quantities.Report_team_name = reportTeamName;
                     each_One_Quantities.Products_name = pn;
-                    each_One_Quantities.Year_and_month_str = year_and_month_str;
+                    each_One_Quantities.Report_year_month_str = report_year_month_str;
                     each_One_Quantities.Quantities = quantities;
                     //第二列为部位
                     each_One_Quantities.Summary_process = uEHelper.getCellContentByRowAndColIndex(currRowIndex, 2);
@@ -216,7 +217,7 @@ namespace Tools
                         each_One_Quantities.Real_team_name = realTeamName;
                     }
                     else {
-                        each_One_Quantities.Real_team_name = teamName;
+                        each_One_Quantities.Real_team_name = reportTeamName;
                     }
                     each_One_Quantities.Emp_name = nameAndRealTeamList[currColIndex - 6].Emp_name;
                     line_each_one_quantities_list.Add(each_One_Quantities);

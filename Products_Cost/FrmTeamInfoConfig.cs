@@ -20,8 +20,8 @@ namespace Products_Cost
         {
             DataGridViewRow dr = dgv.CurrentRow;
             if (dr == null) return;
-            string team_name = dr.Cells["team_name"].Value.ToString();
-            Team_Info.delete(team_name);
+            string report_team_name = dr.Cells["report_team_name"].Value.ToString();
+            Team_Info.delete(report_team_name);
             this.dgv.DataSource = Team_Info.getAllTeamInfo();
             DGVHelper.AutoSizeForDGV(dgv);
         }
@@ -35,17 +35,17 @@ namespace Products_Cost
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string team_name = tbTeam_name.Text.Trim();
+            string report_team_name = tbTeam_name.Text.Trim();
             string monitor = tbMonitor.Text.Trim();
-            if (string.IsNullOrEmpty(team_name)) return;
+            if (string.IsNullOrEmpty(report_team_name)) return;
             //判断是否已经存在
-            if (Team_Info.ifExistsTheTeam(team_name))
+            if (Team_Info.ifExistsTheTeam(report_team_name))
             {
-                ShowResult.show(lblResult, "此线体已存在！", false);
+                ShowResult.show(lblResult, "此班组已存在！", false);
                 timerRestoreTheLblResult.Start();
                 return;
             }
-            Team_Info team_Info = new Team_Info(team_name, monitor);
+            Team_Info team_Info = new Team_Info(report_team_name, monitor);
             team_Info.add();
             //重新获取线体信息
             this.dgv.DataSource = Team_Info.getAllTeamInfo();
